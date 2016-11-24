@@ -2,6 +2,7 @@
 import type { State } from '../../common/types';
 import './App.css';
 import * as themes from './themes';
+import Container from '../app/Container';
 import Footer from './Footer';
 import Header from './Header';
 import Helmet from 'react-helmet';
@@ -9,21 +10,21 @@ import R from 'ramda';
 import React from 'react';
 import favicon from '../../common/app/favicon';
 import start from '../../common/app/start';
-import { Container } from '../app/components';
-import { Match, ThemeProvider } from '../../common/app/components';
-import { Miss } from 'react-router';
+import styled, { ThemeProvider } from 'styled-components';
+import { Match } from '../../common/app/components';
+// import { Miss } from 'react-router';
 import { connect } from 'react-redux';
 
 // Pages
-import FieldsPage from '../fields/FieldsPage';
-import UsersPage from '../users/UsersPage';
+// import FieldsPage from '../fields/FieldsPage';
+// import UsersPage from '../users/UsersPage';
 import HomePage from '../home/HomePage';
-import IntlPage from '../intl/IntlPage';
-import MePage from '../me/MePage';
-import NotFoundPage from '../notfound/NotFoundPage';
-import OfflinePage from '../offline/OfflinePage';
-import SignInPage from '../auth/SignInPage';
-import TodosPage from '../todos/TodosPage';
+// import IntlPage from '../intl/IntlPage';
+// import MePage from '../me/MePage';
+// import NotFoundPage from '../notfound/NotFoundPage';
+// import OfflinePage from '../offline/OfflinePage';
+// import SignInPage from '../auth/SignInPage';
+// import TodosPage from '../todos/TodosPage';
 
 // v4-alpha.getbootstrap.com/getting-started/introduction/#starter-template
 const bootstrap4Metas: any = [
@@ -38,21 +39,23 @@ const bootstrap4Metas: any = [
   },
 ];
 
-const App = ({ currentLocale, currentTheme }) => (
-  <ThemeProvider
-    key={currentTheme} // github.com/yahoo/react-intl/issues/234#issuecomment-163366518
-    theme={themes[currentTheme] || themes.initial}
-  >
+type Props = {
+  currentLocale: string,
+  currentTheme: string,
+};
+
+const Page = styled.div`
+  ${''/* for sticky footer */}
+  flex: 1;
+`;
+
+const App = ({ currentLocale, currentTheme }: Props) => (
+  <ThemeProvider theme={themes[currentTheme] || themes.initial}>
     <Container>
       <Helmet
         htmlAttributes={{ lang: currentLocale }}
         meta={[
           ...bootstrap4Metas,
-          {
-            name: 'description',
-            content: `Starter kit for universal full–fledged React apps. One stack
-              for browser, mobile, server.`,
-          },
           ...favicon.meta,
         ]}
         link={[
@@ -60,7 +63,10 @@ const App = ({ currentLocale, currentTheme }) => (
         ]}
       />
       <Header />
-      <Match exactly pattern="/" component={HomePage} />
+      <Page>
+        <Match exactly pattern="/" component={HomePage} />
+      </Page>
+      {/*
       <Match pattern="/fields" component={FieldsPage} />
       <Match pattern="/users" component={UsersPage} />
       <Match pattern="/intl" component={IntlPage} />
@@ -69,15 +75,11 @@ const App = ({ currentLocale, currentTheme }) => (
       <Match pattern="/todos" component={TodosPage} />
       <Match authorized pattern="/me" component={MePage} />
       <Miss component={NotFoundPage} />
+      */}
       <Footer />
     </Container>
   </ThemeProvider>
 );
-
-App.propTypes = {
-  currentLocale: React.PropTypes.string.isRequired,
-  currentTheme: React.PropTypes.string,
-};
 
 export default R.compose(
   connect(

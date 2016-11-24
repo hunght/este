@@ -1,49 +1,45 @@
 /* @flow */
+/* eslint-disable no-unused-vars, jsx-a11y/anchor-has-content */
+import type { Props as TextProps } from './Text';
 import React from 'react';
-import pseudo from './pseudo';
-import { Base } from 'rebass';
+import styled from 'styled-components';
 import { Link as RouterLink } from 'react-router';
+import { textStyles } from './Text';
 
-const Link = ({ bold, exactly, inverted, pseudo, to, ...props }, { rebass }) => {
-  const baseStyle = {
-    color: inverted ? rebass.inverted : rebass.link.color,
-    ...(bold && rebass.link.bold),
-    ...(rebass.link.link),
-    ...(pseudo.hover && rebass.link.hover),
-  };
-  const linkProps = {
-    ...props,
-    baseStyle,
-    className: 'Link',
-  };
+type Props = {
+  exactly?: boolean,
+  to: string,
+} & TextProps;
+
+const routerLinkActiveStyle = { textDecoration: 'underline' };
+
+const AnchorOrRouterLink = ({ bold, exactly, inverted, small, to, ...props }: Props) => {
   const isExternalLink = to.includes('://');
-  return isExternalLink ? (
-    <Base
-      {...linkProps}
+  return isExternalLink ?
+    <a
+      {...props}
       href={to}
-      is="a"
     />
-  ) : (
-    <Base
-      {...linkProps}
+  :
+    <RouterLink
+      {...props}
       activeOnlyWhenExact={exactly}
-      activeStyle={rebass.link.active}
-      is={RouterLink}
+      activeStyle={routerLinkActiveStyle}
       to={to}
-    />
-  );
+    />;
 };
 
-Link.propTypes = {
-  bold: React.PropTypes.bool,
-  exactly: React.PropTypes.bool,
-  inverted: React.PropTypes.bool,
-  pseudo: React.PropTypes.object.isRequired,
-  to: React.PropTypes.string.isRequired,
-};
+const Link = styled(AnchorOrRouterLink)`
+  ${textStyles}
+  color: ${props => props.inverted ? props.theme.colors.white : props.theme.colors.primary};
+  text-decoration: none;
 
-Link.contextTypes = {
-  rebass: React.PropTypes.object,
-};
+  &:hover {
+    text-decoration: underline;
+  }
+  &:active {
+    text-decoration: underline;
+  }
+`;
 
-export default pseudo(Link);
+export default (props: Props) => <Link {...props} />;

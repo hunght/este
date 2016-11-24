@@ -27,6 +27,17 @@
 # Este ignores
 # gaearon/react-side-effect/issues/25
 .*/node_modules/react-side-effect/*.*
+# styled-components, should be fixed soon
+.*/node_modules/styled-components/src/*.*
+.*/node_modules/styled-components/lib/models/*.*
+.*/node_modules/styled-components/lib/utils/*.*
+.*/node_modules/styled-components/lib/constructors/*.*
+.*/node_modules/styled-components/lib/index.js.flow
+.*/node_modules/styled-components/lib/native/index.js.flow
+.*/node_modules/styled-components/flow-typed/*.*
+.*/node_modules/react/lib/CSSProperty.js
+.*/node_modules/react/lib/CSSPropertyOperations.js
+.*/node_modules/react/lib/dangerousStyleValue.js
 
 [include]
 
