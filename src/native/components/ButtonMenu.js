@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import Icon from 'react-native-vector-icons/Ionicons';
+import { StyleSheet } from 'react-native';
 import {
   TouchableOpacity, Image
 } from 'react-native';
@@ -13,10 +15,12 @@ export default class ButtonMenu extends Component {
       <TouchableOpacity
         onPress={() => navigate('DrawerOpen')}
       >
-        <Image
-            style={{marginLeft: 10}}
-            // source={require('../images/icon_menu.png')}
-        />
+        <Icon
+          name="ios-menu"
+          size={30}
+          color="#4F8EF7"
+          style={{marginLeft: 10}}
+         />
       </TouchableOpacity>
     );
   }

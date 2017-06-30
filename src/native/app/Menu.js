@@ -7,6 +7,9 @@ import {
 import { connect } from 'react-redux';
 import { signOut } from '../../common/auth/actions';
 // const DefaultAvatar ;
+type MenuProps = {
+  viewer?: User,
+};
 
 class Menu extends Component {
 
@@ -34,13 +37,7 @@ class Menu extends Component {
       <View style={container}>
         <View>
           <Text style={title}>App Name</Text>
-          <TouchableOpacity
-              onPress={() => this.clickMenuItem('ScreenProfile', { name: 'Profile'})}
-              style={currentScreen === 'ScreenProfile' ? menuItemActive : menuItem}
-          >
-            {/* <Image style={avatar} source={Avatar} /> */}
-            <Text style={textMenu}>Profile</Text>
-          </TouchableOpacity>
+
           <TouchableOpacity
               onPress={() => this.clickMenuItem('ScreenHome')}
               style={currentScreen === 'ScreenHome' ? menuItemActive : menuItem}
@@ -82,6 +79,15 @@ class Menu extends Component {
             {/* <Image style={menuIcon} source={IconLogout} /> */}
             <Text style={textMenu}>Logout</Text>
           </TouchableOpacity>
+
+          <TouchableOpacity
+              onPress={() => this.clickMenuItem('ScreenProfile', { name: 'Profile'})}
+              style={currentScreen === 'ScreenProfile' ? menuItemActive : menuItem}
+          >
+            {/* <Image style={avatar} source={Avatar} /> */}
+            <Text style={textMenu}>Profile</Text>
+          </TouchableOpacity>
+
         </View>
       </View>
     );
