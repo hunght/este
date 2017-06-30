@@ -16,6 +16,7 @@ import { compose } from 'ramda';
 import { connect } from 'react-redux';
 import { DrawerNavigator } from 'react-navigation';
 
+
 type AppProps = {
   appMenuShown: boolean,
   appShowMenu: typeof appShowMenu,
@@ -44,7 +45,7 @@ const App = ({
           <StatusBar hidden={appMenuShown} />
 
         }
-        <SlideMenu/>
+        <SlideMenu />
         <Baseline lineHeight={theme.typography.lineHeight} />
       </Box>
     </ThemeProvider>

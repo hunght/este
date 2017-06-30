@@ -13,37 +13,33 @@
     "jest": true
   },
   "rules": {
-    // Soft some rules.
-    "arrow-parens": 0, // Does not work with Flow generic types.
-    "global-require": 0, // Used by webpack-isomorphic-tools and React Native.
-    "import/first": 0, // Este sorts by atom/sort-lines natural order.
-    "import/no-duplicates": 2,
-    "import/prefer-default-export": 0, // No. Actions can have just one action.
-    "jsx-a11y/anchor-has-content": 0, // Doesn't work with new components.
-    "jsx-a11y/html-has-lang": 0, // Can't recognize the Helmet.
-    "no-confusing-arrow": 0, // This rule is super confusing.
-    "no-duplicate-imports": 0, // github.com/babel/eslint-plugin-babel/issues/59#issuecomment-230118848
-    "no-nested-ternary": 0, // It's nice for JSX.
-    "no-param-reassign": 0, // We love param reassignment. Naming is hard.
-    "no-shadow": 0, // Shadowing is a nice language feature. Naming is hard.
-    "react/forbid-prop-types": 0, // Este is going to use Flow types.
-    "react/jsx-filename-extension": 0, // No, JSX belongs to .js files
-    "react/jsx-indent": 0, // Damn. We need Yarn asap.
-    "react/no-unused-prop-types": 0, // Este is going to use Flow types.
-    "react/prop-types": 0, // Can't detect flowtype correctly.
-    // React Native.
-    "react-native/no-unused-styles": 2,
-    "react-native/split-platform-components": 2,
-    // Rules for functional programming. We do not need Object.freeze.
-    "fp/no-mutating-assign": 2
-    // TODO: Can't be enabled now, it requires a lot of refactoring.
-    // "fp/no-mutating-methods": 2,
-    // "fp/no-mutation": ["error", {
-    //   "commonjs": true,
-    //   "allowThis": true,
-    //   "exceptions": [
-    //     {"property": "propTypes"}
-    //   ]
-    // }]
+    'arrow-parens': 0, // Does not work with Flow generic types.
+    'comma-dangle': 0, // Because some files are still in ES5.
+    'default-case': 0, // We don't need it with Flow.
+    'import/first': 0, // Este sorts by atom/sort lines natural order.
+    'import/prefer-default-export': 0, // Actions can have just one action.
+    'guard-for-in': 0, // It's not a bug, it's a feature.
+    'no-confusing-arrow': 0, // This rule is confusing.
+    'no-mixed-operators': 0, // Prettier.
+    'no-nested-ternary': 0, // Buggy for functional componenents.
+    'no-param-reassign': 0, // We love param reassignment. Naming is hard.
+    'no-restricted-syntax': 0, // Not needed with modern browsers.
+    'no-shadow': 0, // Shadowing is a nice language feature. Naming is hard.
+    'no-underscore-dangle': 0, // Control freaky.
+    'react/jsx-boolean-value': 0, // Control freaky.
+    'react/jsx-closing-bracket-location': 0, // Prettier.
+    'react/jsx-filename-extension': 0, // JSX belongs to .js files.
+    'react/jsx-indent': 0, // Prettier.
+    'react/jsx-indent-props': 0, // Prettier.
+    'react/jsx-wrap-multilines': 0, // Prettier.
+    'react/no-danger': 0, // Control freaky.
+    'react/no-unescaped-entities': 0, // Prettier.
+    'react/no-unused-prop-types': 0, // Buggy and we don't need it with Flow.
+    'react/prop-types': 0, // We don't need it with Flow.
+    'react/react-in-jsx-scope': 0, // Next.js injects it. Should be default.
+    'react/require-default-props': 0, // We don't need it with Flow.
+    'template-curly-spacing': 0, // Prettier.
+    curly: 0, // Prettier.
+    indent: 0, // Prettier.
   }
 }

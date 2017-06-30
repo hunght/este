@@ -69,7 +69,7 @@ const Header = ({
     })}
   >
     <HeaderButton onPress={() => appShowMenu(!menuShown)}>
-      <HeaderIcon name="ios-menu" />
+      <HeaderIcon name="``ios-menu" />
     </HeaderButton>
     <Text color="white" size={1}>
       {title}
