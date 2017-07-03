@@ -1,18 +1,14 @@
 import React, { Component } from 'react';
-import {
-  View, Text, TouchableOpacity,
-  Image, StyleSheet
-} from 'react-native';
+import { View, Text, TouchableOpacity, Image, StyleSheet } from 'react-native';
 
 import { connect } from 'react-redux';
 import { signOut } from '../../common/auth/actions';
 // const DefaultAvatar ;
 type MenuProps = {
-  viewer?: User,
+  viewer?: User
 };
 
 class Menu extends Component {
-
   constructor(props) {
     super(props);
     this.state = { currentScreen: 'ScreenHome' };
@@ -24,10 +20,7 @@ class Menu extends Component {
   }
 
   render() {
-    const {
-      container, title, menuIcon, avatar,
-      menuItem, menuItemActive, textMenu
-    } = style;
+    const { container, title, menuIcon, avatar, menuItem, menuItemActive, textMenu } = style;
     const { currentScreen } = this.state;
     // const { fbid } = this.props.loginReducer.user
     // const Avatar =
@@ -39,55 +32,50 @@ class Menu extends Component {
           <Text style={title}>App Name</Text>
 
           <TouchableOpacity
-              onPress={() => this.clickMenuItem('ScreenHome')}
-              style={currentScreen === 'ScreenHome' ? menuItemActive : menuItem}
+            onPress={() => this.clickMenuItem('ScreenHome')}
+            style={currentScreen === 'ScreenHome' ? menuItemActive : menuItem}
           >
             {/* <Image style={menuIcon} source={IconHome} /> */}
             <Text style={textMenu}>Home</Text>
           </TouchableOpacity>
 
           <TouchableOpacity
-              onPress={() => this.clickMenuItem('TodosPage')}
-              style={currentScreen === 'TodosPage' ? menuItemActive : menuItem}
+            onPress={() => this.clickMenuItem('TodosPage')}
+            style={currentScreen === 'TodosPage' ? menuItemActive : menuItem}
           >
             {/* <Image style={menuIcon} source={IconHome} /> */}
             <Text style={textMenu}>Todos</Text>
           </TouchableOpacity>
 
           <TouchableOpacity
-              onPress={() => this.clickMenuItem('OfflinePage')}
-              style={currentScreen === 'OfflinePage' ? menuItemActive : menuItem}
+            onPress={() => this.clickMenuItem('OfflinePage')}
+            style={currentScreen === 'OfflinePage' ? menuItemActive : menuItem}
           >
             {/* <Image style={menuIcon} source={IconHome} /> */}
             <Text style={textMenu}>Offline</Text>
           </TouchableOpacity>
 
-
           <TouchableOpacity
-              onPress={() => this.clickMenuItem('LanguageScreen')}
-              style={currentScreen === 'LanguageScreen' ? menuItemActive : menuItem}
+            onPress={() => this.clickMenuItem('LanguageScreen')}
+            style={currentScreen === 'LanguageScreen' ? menuItemActive : menuItem}
           >
             {/* <Image style={menuIcon} source={IconList} /> */}
             <Text style={textMenu}>Languages</Text>
           </TouchableOpacity>
         </View>
         <View>
-          <TouchableOpacity
-              onPress={() => this.props.signOut()}
-              style={menuItem}
-          >
+          <TouchableOpacity onPress={() => this.props.signOut()} style={menuItem}>
             {/* <Image style={menuIcon} source={IconLogout} /> */}
             <Text style={textMenu}>Logout</Text>
           </TouchableOpacity>
 
           <TouchableOpacity
-              onPress={() => this.clickMenuItem('ScreenProfile', { name: 'Profile'})}
-              style={currentScreen === 'ScreenProfile' ? menuItemActive : menuItem}
+            onPress={() => this.clickMenuItem('ScreenProfile', { name: 'Profile' })}
+            style={currentScreen === 'ScreenProfile' ? menuItemActive : menuItem}
           >
             {/* <Image style={avatar} source={Avatar} /> */}
             <Text style={textMenu}>Profile</Text>
           </TouchableOpacity>
-
         </View>
       </View>
     );
@@ -104,18 +92,18 @@ style = StyleSheet.create({
   },
   title: {
     padding: 15,
-    fontWeight : 'bold',
+    fontWeight: 'bold',
     fontSize: 20,
-    color: 'white',
+    color: 'white'
   },
   menuItem: {
     padding: 10,
-    flexDirection:'row',
+    flexDirection: 'row',
     alignItems: 'center'
   },
   menuItemActive: {
     padding: 10,
-    flexDirection:'row',
+    flexDirection: 'row',
     alignItems: 'center',
     backgroundColor: ACTIVE_COLOR
   },
@@ -124,26 +112,24 @@ style = StyleSheet.create({
     borderRadius: 20
   },
   menuIcon: {
-    marginRight: 5,
+    marginRight: 5
   },
   textMenu: {
-    fontWeight : '500',
+    fontWeight: '500',
     color: 'white'
   }
 });
 
-function mapStateToProps (state) {
+function mapStateToProps(state) {
   return {
     loginReducer: state.loginReducer
-  }
+  };
 }
 
-function mapDispatchToProps (dispatch) {
+function mapDispatchToProps(dispatch) {
   return {
     login: () => dispatch(login()),
     signOut: () => dispatch(signOut()())
-  }
+  };
 }
-export default connect(
-  mapStateToProps, mapDispatchToProps
-)(Menu);
+export default connect(mapStateToProps, mapDispatchToProps)(Menu);

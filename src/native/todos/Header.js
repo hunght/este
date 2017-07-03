@@ -13,40 +13,30 @@ const messages = defineMessages({
       one {You have {leftTodos} task}
       other {You have {leftTodos} tasks}
     }`,
-    id: 'todos.leftTodos',
-  },
+    id: 'todos.leftTodos'
+  }
 });
 
 type HeaderProps = {
-  todos: Array<Todo>,
+  todos: Array<Todo>
 };
 
-const computeLeftTodos = todos => values(todos)
-  .filter(todo => !todo.completed)
-  .length;
+const computeLeftTodos = todos => values(todos).filter(todo => !todo.completed).length;
 
-const Header = ({
-  todos,
-}: HeaderProps) => {
+const Header = ({ todos }: HeaderProps) => {
   const leftTodos = computeLeftTodos(todos);
   return (
-    <Box
-      alignItems="center"
-      backgroundColor="primary"
-      padding={0.5}
-    >
-      <FormattedMessage
-        {...messages.leftTodos}
-        values={{ leftTodos }}
-      >{message =>
-        <Text color="white" size={1}>{message}</Text>
-      }</FormattedMessage>
+    <Box alignItems="center" backgroundColor="primary" padding={0.5}>
+      <FormattedMessage {...messages.leftTodos} values={{ leftTodos }}>
+        {message =>
+          <Text color="white" size={1}>
+            {message}
+          </Text>}
+      </FormattedMessage>
     </Box>
   );
 };
 
-export default connect(
-  (state: State) => ({
-    todos: state.todos.all,
-  }),
-)(Header);
+export default connect((state: State) => ({
+  todos: state.todos.all
+}))(Header);

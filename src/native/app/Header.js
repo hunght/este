@@ -11,23 +11,23 @@ import { connect } from 'react-redux';
 type HeaderProps = {
   appShowMenu: typeof appShowMenu,
   menuShown: boolean,
-  title: string,
+  title: string
 };
 
 // iOS status bar is an overlay with default height 20px. We add one baseline
 // to preserve the vertical rhythm. We also set height to ensure hairline
 // border height (various) is included.
-const platformStyles = () => Platform.OS === 'ios' ? {
-  paddingTop: 1,
-  height: 3,
-} : {
-  height: 2,
-};
+const platformStyles = () =>
+  Platform.OS === 'ios'
+    ? {
+        paddingTop: 1,
+        height: 3
+      }
+    : {
+        height: 2
+      };
 
-const HeaderButton = ({
-  right,
-  ...props
-}) => (
+const HeaderButton = ({ right, ...props }) =>
   <Box
     alignSelf="stretch"
     flex={1}
@@ -41,23 +41,11 @@ const HeaderButton = ({
       paddingHorizontal={0.5}
       {...props}
     />
-  </Box>
-);
+  </Box>;
 
-const HeaderIcon = (props) => (
-  <Text
-    as={Icon}
-    color="white"
-    size={1}
-    {...props}
-  />
-);
+const HeaderIcon = props => <Text as={Icon} color="white" size={1} {...props} />;
 
-const Header = ({
-  appShowMenu,
-  menuShown,
-  title,
-}: HeaderProps) => (
+const Header = ({ appShowMenu, menuShown, title }: HeaderProps) =>
   <Box
     {...platformStyles()}
     backgroundColor="primary"
@@ -65,7 +53,7 @@ const Header = ({
     alignItems="center"
     style={theme => ({
       borderBottomColor: color(theme.colors.primary).lighten(0.2).string(),
-      borderBottomWidth: StyleSheet.hairlineWidth,
+      borderBottomWidth: StyleSheet.hairlineWidth
     })}
   >
     <HeaderButton onPress={() => appShowMenu(!menuShown)}>
@@ -79,12 +67,11 @@ const Header = ({
       {/* <HeaderIcon name="ios-menu" /> */}
       {/* Foo */}
     </HeaderButton>
-  </Box>
-);
+  </Box>;
 
 export default connect(
   (state: State) => ({
-    menuShown: state.app.menuShown,
+    menuShown: state.app.menuShown
   }),
-  { appShowMenu },
+  { appShowMenu }
 )(Header);

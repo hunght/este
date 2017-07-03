@@ -1,10 +1,6 @@
 import React, { Component } from 'react';
-import {
-  Text, StyleSheet, View, TouchableOpacity
-} from 'react-native';
-import {
-  StackNavigator, DrawerNavigator, TabNavigator, DrawerItems
-} from 'react-navigation';
+import { Text, StyleSheet, View, TouchableOpacity } from 'react-native';
+import { StackNavigator, DrawerNavigator, TabNavigator, DrawerItems } from 'react-navigation';
 import ButtonMenu from '../components/ButtonMenu';
 import Menu from './Menu';
 
@@ -16,11 +12,9 @@ import OfflinePage from '../offline/OfflinePage';
 import SignInPage from '../auth/SignInPage';
 import TodosPage from '../todos/TodosPage';
 
-
 const MAIN_COLOR = '#3498db';
 
 export const HomeStack = StackNavigator({
-
   ScreenHome: {
     screen: HomePage,
     navigationOptions: ({ navigation }) => ({
@@ -53,11 +47,14 @@ export const HomeStack = StackNavigator({
     screen: MePage,
     navigationOptions: ({ navigation }) => ({
       headerLeft: <ButtonMenu navigation={navigation} />,
-      title: <Text style={style.headerHomeText}>{navigation.state.params.user.name}</Text>
+      title: (
+        <Text style={style.headerHomeText}>
+          {navigation.state.params.user.name}
+        </Text>
+      )
     })
   }
 });
-
 
 export const SlideMenu = DrawerNavigator(
   {

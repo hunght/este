@@ -8,31 +8,20 @@ import { FormattedMessage } from 'react-intl';
 import { connect } from 'react-redux';
 import { signIn } from '../../common/auth/actions';
 
-const SocialLoginButton = ({
-  backgroundColor,
-  message,
-  name,
-  onPress,
-}) =>
+const SocialLoginButton = ({ backgroundColor, message, name, onPress }) =>
   <FormattedMessage {...message}>
     {message =>
-      <Icon.Button
-        backgroundColor={backgroundColor}
-        name={name}
-        onPress={onPress}
-      >{message}</Icon.Button>
-    }
+      <Icon.Button backgroundColor={backgroundColor} name={name} onPress={onPress}>
+        {message}
+      </Icon.Button>}
   </FormattedMessage>;
 
 type SocialProps = {
   disabled: boolean,
-  signIn: typeof signIn,
+  signIn: typeof signIn
 };
 
-const Social = ({
-  disabled,
-  signIn,
-}: SocialProps) => {
+const Social = ({ disabled, signIn }: SocialProps) => {
   const onPress = () => {
     if (disabled) return;
     signIn('facebook', { isNative: true });
@@ -52,7 +41,7 @@ const Social = ({
 
 export default connect(
   (state: State) => ({
-    disabled: state.auth.formDisabled,
+    disabled: state.auth.formDisabled
   }),
-  { signIn },
+  { signIn }
 )(Social);

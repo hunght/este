@@ -8,25 +8,19 @@ import { Match } from 'react-router';
 type LinkProps = ButtonProps & {
   activeStyle?: (theme: Theme) => Object,
   exactly?: boolean,
-  to: string | Object,
+  to: string | Object
 };
 
 type LinkContext = {
-  router: any,
+  router: any
 };
 
-const Link = ({
-  activeStyle,
-  boxStyle,
-  exactly,
-  onPress,
-  to,
-  ...props
-}: LinkProps, {
-  router,
-}: LinkContext) => (
+const Link = (
+  { activeStyle, boxStyle, exactly, onPress, to, ...props }: LinkProps,
+  { router }: LinkContext
+) =>
   <Match exactly={exactly} pattern={to}>
-    {({ matched }) => (
+    {({ matched }) =>
       <Button
         onPress={() => {
           router.transitionTo(to);
@@ -35,16 +29,14 @@ const Link = ({
         }}
         boxStyle={theme => ({
           ...(boxStyle && boxStyle(theme)),
-          ...(matched && activeStyle ? activeStyle(theme) : null),
+          ...(matched && activeStyle ? activeStyle(theme) : null)
         })}
         {...props}
-      />
-    )}
-  </Match>
-);
+      />}
+  </Match>;
 
 Link.contextTypes = {
-  router: React.PropTypes.object,
+  router: React.PropTypes.object
 };
 
 export default Link;

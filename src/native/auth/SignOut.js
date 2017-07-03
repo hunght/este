@@ -18,13 +18,16 @@ const SignOut = ({ signOut }: SignOutProps, { router }: SignOutContext) => {
   };
   return (
     <FormattedMessage {...buttonsMessages.signOut}>
-      {message => <Button danger onPress={onPress}>{message}</Button>}
+      {message =>
+        <Button danger onPress={onPress}>
+          {message}
+        </Button>}
     </FormattedMessage>
   );
 };
 
 SignOut.contextTypes = {
-  router: React.PropTypes.object,
+  router: React.PropTypes.object
 };
 
 // $FlowFixMe SignOut Context does it.
