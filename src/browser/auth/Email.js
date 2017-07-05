@@ -9,18 +9,11 @@ import { connect } from 'react-redux';
 import { fields } from '../../common/lib/redux-fields';
 import { resetPassword, signIn, signUp } from '../../common/auth/actions';
 import { Form, focus } from '../components';
-import {
-  Box,
-
-  Heading,
-  Message,
-  OutlineButton,
-  TextInput,
-} from '../../common/components';
+import { Box, Heading, Message, OutlineButton, TextInput } from '../../common/components';
 
 type EmailState = {
   forgetPasswordIsShown: boolean,
-  recoveryEmailSent: boolean,
+  recoveryEmailSent: boolean
 };
 
 type EmailProps = {
@@ -29,38 +22,35 @@ type EmailProps = {
   intl: $IntlShape,
   resetPassword: typeof resetPassword,
   signIn: typeof signIn,
-  signUp: typeof signUp,
+  signUp: typeof signUp
 };
 
 // blog.mariusschulz.com/2016/03/20/how-to-remove-webkits-banana-yellow-autofill-background
 const overrideWebkitYellowAutofill = () => ({
-  WebkitBoxShadow: 'inset 0 0 0px 9999px white',
+  WebkitBoxShadow: 'inset 0 0 0px 9999px white'
 });
 
-const Button = ({ message, ...props }) => (
+const Button = ({ message, ...props }) =>
   <FormattedMessage {...message}>
-    {msg => (
+    {msg =>
       <OutlineButton marginHorizontal={0.25} {...props}>
         {msg}
-      </OutlineButton>
-    )}
-  </FormattedMessage>
-);
+      </OutlineButton>}
+  </FormattedMessage>;
 
-const Buttons = props => (
+const Buttons = props =>
   <Box
     flexDirection="row"
     flexWrap="wrap"
     marginVertical={1}
     marginHorizontal={-0.25}
     {...props}
-  />
-);
+  />;
 
 class Email extends React.Component {
   state: EmailState = {
     forgetPasswordIsShown: false,
-    recoveryEmailSent: false,
+    recoveryEmailSent: false
   };
 
   onFormSubmit = () => {
@@ -97,7 +87,7 @@ class Email extends React.Component {
     resetPassword(email);
     this.setState({
       forgetPasswordIsShown: false,
-      recoveryEmailSent: true,
+      recoveryEmailSent: true
     });
   }
 
@@ -159,11 +149,10 @@ class Email extends React.Component {
               </Buttons>
               {recoveryEmailSent &&
                 <FormattedMessage {...emailMessages.recoveryEmailSent}>
-                  {message => (
+                  {message =>
                     <Message backgroundColor="success" marginTop={1}>
                       {message}
-                    </Message>
-                  )}
+                    </Message>}
                 </FormattedMessage>}
             </Box>
           : <Buttons>
@@ -187,14 +176,14 @@ export default compose(
   connect(
     (state: State) => ({
       disabled: state.auth.formDisabled,
-      error: state.auth.error,
+      error: state.auth.error
     }),
-    { resetPassword, signIn, signUp },
+    { resetPassword, signIn, signUp }
   ),
   injectIntl,
   fields({
     path: ['auth', 'email'],
-    fields: ['email', 'password'],
+    fields: ['email', 'password']
   }),
-  focus('error'),
+  focus('error')
 )(Email);

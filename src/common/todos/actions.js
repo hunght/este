@@ -12,13 +12,13 @@ export const addHundredTodos = () => ({ getUid, now }: Deps): Action => {
       completed: false,
       createdAt: now(),
       id,
-      title: `Item #${id}`,
+      title: `Item #${id}`
     };
     return todo;
   });
   return {
     type: 'ADD_HUNDRED_TODOS',
-    payload: { todos },
+    payload: { todos }
   };
 };
 
@@ -29,25 +29,25 @@ export const addTodo = (title: string) => ({ getUid, now }: Deps): Action => ({
       completed: false,
       createdAt: now(),
       id: getUid(),
-      title: title.trim(),
-    },
-  },
+      title: title.trim()
+    }
+  }
 });
 
 export const clearAllCompletedTodos = (): Action => ({
-  type: 'CLEAR_ALL_COMPLETED_TODOS',
+  type: 'CLEAR_ALL_COMPLETED_TODOS'
 });
 
 export const clearAllTodos = (): Action => ({
-  type: 'CLEAR_ALL_TODOS',
+  type: 'CLEAR_ALL_TODOS'
 });
 
 export const deleteTodo = (id: string): Action => ({
   type: 'DELETE_TODO',
-  payload: { id },
+  payload: { id }
 });
 
 export const toggleTodoCompleted = (todo: Todo): Action => ({
   type: 'TOGGLE_TODO_COMPLETED',
-  payload: { todo },
+  payload: { todo }
 });
