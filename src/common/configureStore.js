@@ -4,42 +4,29 @@ import configureReducer from './configureReducer';
 import configureStorage from './configureStorage';
 import { applyMiddleware, createStore, compose } from 'redux';
 import { persistStore, autoRehydrate } from 'redux-persist';
+import { composeWithDevTools } from 'remote-redux-devtools';
 
 type Options = {
   initialState: Object,
   platformDeps?: Object,
-  platformMiddleware?: Array<Function>,
+  platformMiddleware?: Array<Function>
 };
 
 const configureStore = (options: Options) => {
-  const {
-    initialState,
-    platformDeps = {},
-    platformMiddleware = [],
-  } = options;
+  const { initialState, platformDeps = {}, platformMiddleware = [] } = options;
 
   const reducer = configureReducer(initialState);
 
-  const middleware = configureMiddleware(
-    initialState,
-    platformDeps,
-    platformMiddleware,
-  );
+  const middleware = configureMiddleware(initialState, platformDeps, platformMiddleware);
 
   const store = createStore(
     reducer,
     initialState,
-    compose(
-      applyMiddleware(...middleware),
-      autoRehydrate(),
-    ),
+    composeWithDevTools(applyMiddleware(...middleware), autoRehydrate())
   );
 
   if (platformDeps.storageEngine) {
-    const config = configureStorage(
-      initialState.config.appName,
-      platformDeps.storageEngine,
-    );
+    const config = configureStorage(initialState.config.appName, platformDeps.storageEngine);
     persistStore(store, config);
   }
 

@@ -1,6 +1,7 @@
 // @flow weak
 import type { Action, State } from './types';
 import app from './app/reducer';
+import { tabBarReducer as tabBar } from '../native/app/router';
 import auth from './auth/reducer';
 import config from './config/reducer';
 import device from './device/reducer';
@@ -11,24 +12,22 @@ import { combineReducers } from 'redux';
 import { fieldsReducer as fields } from './lib/redux-fields';
 
 // stackoverflow.com/q/35622588/233902
-const resetStateOnSignOutReducer = (reducer, initialState) => (
-  state: State,
-  action: Action,
-) => {
+const resetStateOnSignOutReducer = (reducer, initialState) => (state: State, action: Action) => {
   const userWasSignedOut =
-    action.type === 'ON_AUTH' &&
-    state.users.viewer &&
-    !action.payload.firebaseUser;
+    action.type === 'ON_AUTH' && state.users.viewer && !action.payload.firebaseUser;
   if (!userWasSignedOut) {
     return reducer(state, action);
   }
   // Purge sensitive data, preserve only app and safe initial state.
-  return reducer({
-    app: state.app,
-    config: initialState.config,
-    device: initialState.device,
-    intl: initialState.intl,
-  }, action);
+  return reducer(
+    {
+      app: state.app,
+      config: initialState.config,
+      device: initialState.device,
+      intl: initialState.intl
+    },
+    action
+  );
 };
 
 const configureReducer = (initialState: Object) => {
@@ -41,6 +40,7 @@ const configureReducer = (initialState: Object) => {
     intl,
     todos,
     users,
+    tabBar
   });
 
   // The power of higher-order reducers, http://slides.com/omnidan/hor

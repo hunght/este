@@ -3,7 +3,6 @@ import App from './App';
 import Fela from '../../common/components/FelaProvider';
 import React from 'react';
 import configureFela from '../configureFela';
-import { MemoryRouter } from 'react-router';
 import { Provider as Redux } from 'react-redux';
 import { Image, Text, TextInput, TouchableOpacity, View } from 'react-native';
 
@@ -28,9 +27,7 @@ class Root extends React.Component {
           View={View}
           renderer={configureFela()}
         >
-          <MemoryRouter>
-            <App />
-          </MemoryRouter>
+          <App />
         </Fela>
       </Redux>
     );
