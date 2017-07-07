@@ -4,9 +4,9 @@ import Checkbox from './Checkbox';
 import Footer from './Footer';
 import React from 'react';
 import todosMessages from '../../common/todos/todosMessages';
-import { Box, Text, TextInput } from '../../common/components';
+import { Box, TextInput } from '../../common/components';
 import { FormattedMessage } from 'react-intl';
-import { Image, ScrollView, StyleSheet } from 'react-native';
+import { Image, ScrollView, StyleSheet, ListView, Text } from 'react-native';
 import { compose, isEmpty, prop, reverse, sortBy, values } from 'ramda';
 import { connect } from 'react-redux';
 import { toggleTodoCompleted } from '../../common/todos/actions';
@@ -54,6 +54,19 @@ type TodosProps = {
   toggleTodoCompleted: typeof toggleTodoCompleted,
 };
 
+const styles = StyleSheet.create({
+  list: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+  },
+  item: {
+    backgroundColor: 'red',
+    margin: 3,
+    width: 100,
+    height: 80,
+  },
+});
+
 const Todos = ({ todos, toggleTodoCompleted }: TodosProps) => {
   if (isEmpty(todos)) {
     return <IsEmpty />;
@@ -65,13 +78,25 @@ const Todos = ({ todos, toggleTodoCompleted }: TodosProps) => {
     values, // object values to array
   )(todos);
 
+  const ds = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
+
+  const dataSource = ds.cloneWithRows(sortedTodos);
+
   return (
-    <ScrollView>
+    <ListView
+      contentContainerStyle={styles.list}
+      dataSource={dataSource}
+      renderRow={rowData =>
+        <Text style={styles.item}>
+          {rowData.title}
+        </Text>}
+    />
+    /* <ScrollView>
       {sortedTodos.map(todo =>
         <TodoItem todo={todo} toggleTodoCompleted={toggleTodoCompleted} key={todo.id} />,
       )}
       <Footer />
-    </ScrollView>
+    </ScrollView>  */
   );
 };
 
