@@ -5,10 +5,10 @@ import { addNavigationHelpers } from 'react-navigation';
 
 import { TabBar } from './router';
 
-const AppWithNavigationState = ({ dispatch, nav }) =>
+const EnhanceRouter = ({ dispatch, nav }) =>
   <TabBar navigation={addNavigationHelpers({ dispatch, state: nav })} />;
 
-AppWithNavigationState.propTypes = {
+EnhanceRouter.propTypes = {
   dispatch: PropTypes.func.isRequired,
   nav: PropTypes.object.isRequired
 };
@@ -17,4 +17,4 @@ const mapStateToProps = state => ({
   nav: state.tabBar
 });
 
-export default connect(mapStateToProps)(AppWithNavigationState);
+export default connect(mapStateToProps)(EnhanceRouter);
