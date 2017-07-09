@@ -1,4 +1,4 @@
-// flow-typed signature: 21f6d4f0a03e96ef7e39187d2ef21696
+// flow-typed signature: 7527abc3cd3af435f2e2aa019f6aa599
 // flow-typed version: <<STUB>>/webpack-isomorphic-tools_v^2.6.5/flow_v0.37.0
 
 /**
@@ -8,8 +8,8 @@
  *
  * Fill this stub out by replacing all the `any` types.
  *
- * Once filled out, we encourage you to share your work with the 
- * community by sending a pull request to: 
+ * Once filled out, we encourage you to share your work with the
+ * community by sending a pull request to:
  * https://github.com/flowtype/flow-typed
  */
 

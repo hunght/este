@@ -1,4 +1,4 @@
-// flow-typed signature: 8fa8403e63cdf0896a2537fcae8f68a9
+// flow-typed signature: 4e15382d17aeb230755bba786c2457d2
 // flow-typed version: <<STUB>>/extract-text-webpack-plugin_v2.0.0-beta.4/flow_v0.37.0
 
 /**
@@ -8,8 +8,8 @@
  *
  * Fill this stub out by replacing all the `any` types.
  *
- * Once filled out, we encourage you to share your work with the 
- * community by sending a pull request to: 
+ * Once filled out, we encourage you to share your work with the
+ * community by sending a pull request to:
  * https://github.com/flowtype/flow-typed
  */
 

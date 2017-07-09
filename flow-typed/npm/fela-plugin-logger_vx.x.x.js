@@ -1,4 +1,4 @@
-// flow-typed signature: 73b3194c8c806c2f675ec7604cf805de
+// flow-typed signature: b8d632f597de0ccab20def7c3c54ea75
 // flow-typed version: <<STUB>>/fela-plugin-logger_v^4.1.0/flow_v0.37.0
 
 /**
@@ -8,8 +8,8 @@
  *
  * Fill this stub out by replacing all the `any` types.
  *
- * Once filled out, we encourage you to share your work with the 
- * community by sending a pull request to: 
+ * Once filled out, we encourage you to share your work with the
+ * community by sending a pull request to:
  * https://github.com/flowtype/flow-typed
  */
 

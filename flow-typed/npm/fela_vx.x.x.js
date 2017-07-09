@@ -1,4 +1,4 @@
-// flow-typed signature: 9a4f081bc63f5ac3c833b49e53eaf637
+// flow-typed signature: 3300194510b3790fb57ed541450d911f
 // flow-typed version: <<STUB>>/fela_v^4.1.0/flow_v0.37.0
 
 /**
@@ -8,8 +8,8 @@
  *
  * Fill this stub out by replacing all the `any` types.
  *
- * Once filled out, we encourage you to share your work with the 
- * community by sending a pull request to: 
+ * Once filled out, we encourage you to share your work with the
+ * community by sending a pull request to:
  * https://github.com/flowtype/flow-typed
  */
 
@@ -30,6 +30,34 @@ declare module 'fela/dist/fela.min' {
   declare module.exports: any;
 }
 
+declare module 'fela/lib/__tests__/combineRules-test' {
+  declare module.exports: any;
+}
+
+declare module 'fela/lib/__tests__/createRenderer-test' {
+  declare module.exports: any;
+}
+
+declare module 'fela/lib/__tests__/enhance-test' {
+  declare module.exports: any;
+}
+
+declare module 'fela/lib/bindings/__tests__/createComponentFactory-test' {
+  declare module.exports: any;
+}
+
+declare module 'fela/lib/bindings/connectFactory' {
+  declare module.exports: any;
+}
+
+declare module 'fela/lib/bindings/createComponentFactory' {
+  declare module.exports: any;
+}
+
+declare module 'fela/lib/bindings/generateDisplayName' {
+  declare module.exports: any;
+}
+
 declare module 'fela/lib/bindings/inferno/connect' {
   declare module.exports: any;
 }
@@ -43,6 +71,34 @@ declare module 'fela/lib/bindings/inferno/index' {
 }
 
 declare module 'fela/lib/bindings/inferno/Provider' {
+  declare module.exports: any;
+}
+
+declare module 'fela/lib/bindings/inferno/ThemeProvider' {
+  declare module.exports: any;
+}
+
+declare module 'fela/lib/bindings/preact/connect' {
+  declare module.exports: any;
+}
+
+declare module 'fela/lib/bindings/preact/createComponent' {
+  declare module.exports: any;
+}
+
+declare module 'fela/lib/bindings/preact/index' {
+  declare module.exports: any;
+}
+
+declare module 'fela/lib/bindings/preact/Provider' {
+  declare module.exports: any;
+}
+
+declare module 'fela/lib/bindings/preact/ThemeProvider' {
+  declare module.exports: any;
+}
+
+declare module 'fela/lib/bindings/react/__tests__/createComponent-test' {
   declare module.exports: any;
 }
 
@@ -74,6 +130,18 @@ declare module 'fela/lib/createRenderer' {
   declare module.exports: any;
 }
 
+declare module 'fela/lib/dom/__tests__/DOMInterface-test' {
+  declare module.exports: any;
+}
+
+declare module 'fela/lib/dom/__tests__/mocks/DOMNode' {
+  declare module.exports: any;
+}
+
+declare module 'fela/lib/dom/__tests__/render-test' {
+  declare module.exports: any;
+}
+
 declare module 'fela/lib/dom/DOMInterface' {
   declare module.exports: any;
 }
@@ -87,6 +155,10 @@ declare module 'fela/lib/dom/render' {
 }
 
 declare module 'fela/lib/enhance' {
+  declare module.exports: any;
+}
+
+declare module 'fela/lib/enhancers/__tests__/monolithic-test' {
   declare module.exports: any;
 }
 
@@ -110,7 +182,15 @@ declare module 'fela/lib/enhancers/logger' {
   declare module.exports: any;
 }
 
+declare module 'fela/lib/enhancers/monolithic' {
+  declare module.exports: any;
+}
+
 declare module 'fela/lib/enhancers/perf' {
+  declare module.exports: any;
+}
+
+declare module 'fela/lib/enhancers/statistics' {
   declare module.exports: any;
 }
 
@@ -119,6 +199,50 @@ declare module 'fela/lib/index' {
 }
 
 declare module 'fela/lib/native/createRenderer' {
+  declare module.exports: any;
+}
+
+declare module 'fela/lib/plugins/__tests__/customProperty-test' {
+  declare module.exports: any;
+}
+
+declare module 'fela/lib/plugins/__tests__/dynamicPrefixer-test' {
+  declare module.exports: any;
+}
+
+declare module 'fela/lib/plugins/__tests__/extend-test' {
+  declare module.exports: any;
+}
+
+declare module 'fela/lib/plugins/__tests__/fallbackValue-test' {
+  declare module.exports: any;
+}
+
+declare module 'fela/lib/plugins/__tests__/friendlyPseudoClass-test' {
+  declare module.exports: any;
+}
+
+declare module 'fela/lib/plugins/__tests__/LVHA-test' {
+  declare module.exports: any;
+}
+
+declare module 'fela/lib/plugins/__tests__/namedMediaQuery-test' {
+  declare module.exports: any;
+}
+
+declare module 'fela/lib/plugins/__tests__/placeholderPrefixer-test' {
+  declare module.exports: any;
+}
+
+declare module 'fela/lib/plugins/__tests__/prefixer-test' {
+  declare module.exports: any;
+}
+
+declare module 'fela/lib/plugins/__tests__/removeUndefined-test' {
+  declare module.exports: any;
+}
+
+declare module 'fela/lib/plugins/__tests__/unit-test' {
   declare module.exports: any;
 }
 
@@ -194,6 +318,14 @@ declare module 'fela/lib/presets/web' {
   declare module.exports: any;
 }
 
+declare module 'fela/lib/tools/__tests__/mapValueToMediaQuery-test' {
+  declare module.exports: any;
+}
+
+declare module 'fela/lib/tools/__tests__/StyleSheet-test' {
+  declare module.exports: any;
+}
+
 declare module 'fela/lib/tools/index' {
   declare module.exports: any;
 }
@@ -206,7 +338,83 @@ declare module 'fela/lib/tools/StyleSheet' {
   declare module.exports: any;
 }
 
+declare module 'fela/lib/utils/__tests__/applyMediaRulesInOrder-test' {
+  declare module.exports: any;
+}
+
+declare module 'fela/lib/utils/__tests__/checkFontFormat-test' {
+  declare module.exports: any;
+}
+
+declare module 'fela/lib/utils/__tests__/cssifyFontFace-test' {
+  declare module.exports: any;
+}
+
+declare module 'fela/lib/utils/__tests__/cssifyKeyframe-test' {
+  declare module.exports: any;
+}
+
+declare module 'fela/lib/utils/__tests__/cssifyMediaQueryRules-test' {
+  declare module.exports: any;
+}
+
+declare module 'fela/lib/utils/__tests__/cssifyStaticStyle-test' {
+  declare module.exports: any;
+}
+
+declare module 'fela/lib/utils/__tests__/generateAnimationName-test' {
+  declare module.exports: any;
+}
+
+declare module 'fela/lib/utils/__tests__/generateClassName-test' {
+  declare module.exports: any;
+}
+
+declare module 'fela/lib/utils/__tests__/generateCombinedMediaQuery-test' {
+  declare module.exports: any;
+}
+
+declare module 'fela/lib/utils/__tests__/generateCSSRule-test' {
+  declare module.exports: any;
+}
+
+declare module 'fela/lib/utils/__tests__/generateCSSSelector-test' {
+  declare module.exports: any;
+}
+
+declare module 'fela/lib/utils/__tests__/generateStaticReference-test' {
+  declare module.exports: any;
+}
+
+declare module 'fela/lib/utils/__tests__/isMediaQuery-test' {
+  declare module.exports: any;
+}
+
+declare module 'fela/lib/utils/__tests__/isNestedSelector-test' {
+  declare module.exports: any;
+}
+
+declare module 'fela/lib/utils/__tests__/minifyCSSString-test' {
+  declare module.exports: any;
+}
+
+declare module 'fela/lib/utils/__tests__/processStyleWithPlugins-test' {
+  declare module.exports: any;
+}
+
+declare module 'fela/lib/utils/__tests__/toCSSString-test' {
+  declare module.exports: any;
+}
+
 declare module 'fela/lib/utils/applyMediaRulesInOrder' {
+  declare module.exports: any;
+}
+
+declare module 'fela/lib/utils/arrayEach' {
+  declare module.exports: any;
+}
+
+declare module 'fela/lib/utils/arrayReduce' {
   declare module.exports: any;
 }
 
@@ -214,7 +422,15 @@ declare module 'fela/lib/utils/assign' {
   declare module.exports: any;
 }
 
+declare module 'fela/lib/utils/assignStyles' {
+  declare module.exports: any;
+}
+
 declare module 'fela/lib/utils/checkFontFormat' {
+  declare module.exports: any;
+}
+
+declare module 'fela/lib/utils/checkFontUrl' {
   declare module.exports: any;
 }
 
@@ -274,6 +490,10 @@ declare module 'fela/lib/utils/isAttributeSelector' {
   declare module.exports: any;
 }
 
+declare module 'fela/lib/utils/isBase64' {
+  declare module.exports: any;
+}
+
 declare module 'fela/lib/utils/isChildSelector' {
   declare module.exports: any;
 }
@@ -283,6 +503,10 @@ declare module 'fela/lib/utils/isMediaQuery' {
 }
 
 declare module 'fela/lib/utils/isNestedSelector' {
+  declare module.exports: any;
+}
+
+declare module 'fela/lib/utils/isObject' {
   declare module.exports: any;
 }
 
@@ -303,6 +527,10 @@ declare module 'fela/lib/utils/minifyCSSString' {
 }
 
 declare module 'fela/lib/utils/normalizeNestedProperty' {
+  declare module.exports: any;
+}
+
+declare module 'fela/lib/utils/objectReduce' {
   declare module.exports: any;
 }
 
@@ -339,6 +567,27 @@ declare module 'fela/index' {
 declare module 'fela/index.js' {
   declare module.exports: $Exports<'fela'>;
 }
+declare module 'fela/lib/__tests__/combineRules-test.js' {
+  declare module.exports: $Exports<'fela/lib/__tests__/combineRules-test'>;
+}
+declare module 'fela/lib/__tests__/createRenderer-test.js' {
+  declare module.exports: $Exports<'fela/lib/__tests__/createRenderer-test'>;
+}
+declare module 'fela/lib/__tests__/enhance-test.js' {
+  declare module.exports: $Exports<'fela/lib/__tests__/enhance-test'>;
+}
+declare module 'fela/lib/bindings/__tests__/createComponentFactory-test.js' {
+  declare module.exports: $Exports<'fela/lib/bindings/__tests__/createComponentFactory-test'>;
+}
+declare module 'fela/lib/bindings/connectFactory.js' {
+  declare module.exports: $Exports<'fela/lib/bindings/connectFactory'>;
+}
+declare module 'fela/lib/bindings/createComponentFactory.js' {
+  declare module.exports: $Exports<'fela/lib/bindings/createComponentFactory'>;
+}
+declare module 'fela/lib/bindings/generateDisplayName.js' {
+  declare module.exports: $Exports<'fela/lib/bindings/generateDisplayName'>;
+}
 declare module 'fela/lib/bindings/inferno/connect.js' {
   declare module.exports: $Exports<'fela/lib/bindings/inferno/connect'>;
 }
@@ -350,6 +599,27 @@ declare module 'fela/lib/bindings/inferno/index.js' {
 }
 declare module 'fela/lib/bindings/inferno/Provider.js' {
   declare module.exports: $Exports<'fela/lib/bindings/inferno/Provider'>;
+}
+declare module 'fela/lib/bindings/inferno/ThemeProvider.js' {
+  declare module.exports: $Exports<'fela/lib/bindings/inferno/ThemeProvider'>;
+}
+declare module 'fela/lib/bindings/preact/connect.js' {
+  declare module.exports: $Exports<'fela/lib/bindings/preact/connect'>;
+}
+declare module 'fela/lib/bindings/preact/createComponent.js' {
+  declare module.exports: $Exports<'fela/lib/bindings/preact/createComponent'>;
+}
+declare module 'fela/lib/bindings/preact/index.js' {
+  declare module.exports: $Exports<'fela/lib/bindings/preact/index'>;
+}
+declare module 'fela/lib/bindings/preact/Provider.js' {
+  declare module.exports: $Exports<'fela/lib/bindings/preact/Provider'>;
+}
+declare module 'fela/lib/bindings/preact/ThemeProvider.js' {
+  declare module.exports: $Exports<'fela/lib/bindings/preact/ThemeProvider'>;
+}
+declare module 'fela/lib/bindings/react/__tests__/createComponent-test.js' {
+  declare module.exports: $Exports<'fela/lib/bindings/react/__tests__/createComponent-test'>;
 }
 declare module 'fela/lib/bindings/react/connect.js' {
   declare module.exports: $Exports<'fela/lib/bindings/react/connect'>;
@@ -372,6 +642,15 @@ declare module 'fela/lib/combineRules.js' {
 declare module 'fela/lib/createRenderer.js' {
   declare module.exports: $Exports<'fela/lib/createRenderer'>;
 }
+declare module 'fela/lib/dom/__tests__/DOMInterface-test.js' {
+  declare module.exports: $Exports<'fela/lib/dom/__tests__/DOMInterface-test'>;
+}
+declare module 'fela/lib/dom/__tests__/mocks/DOMNode.js' {
+  declare module.exports: $Exports<'fela/lib/dom/__tests__/mocks/DOMNode'>;
+}
+declare module 'fela/lib/dom/__tests__/render-test.js' {
+  declare module.exports: $Exports<'fela/lib/dom/__tests__/render-test'>;
+}
 declare module 'fela/lib/dom/DOMInterface.js' {
   declare module.exports: $Exports<'fela/lib/dom/DOMInterface'>;
 }
@@ -383,6 +662,9 @@ declare module 'fela/lib/dom/render.js' {
 }
 declare module 'fela/lib/enhance.js' {
   declare module.exports: $Exports<'fela/lib/enhance'>;
+}
+declare module 'fela/lib/enhancers/__tests__/monolithic-test.js' {
+  declare module.exports: $Exports<'fela/lib/enhancers/__tests__/monolithic-test'>;
 }
 declare module 'fela/lib/enhancers/beautifier.js' {
   declare module.exports: $Exports<'fela/lib/enhancers/beautifier'>;
@@ -399,14 +681,53 @@ declare module 'fela/lib/enhancers/layoutDebugger.js' {
 declare module 'fela/lib/enhancers/logger.js' {
   declare module.exports: $Exports<'fela/lib/enhancers/logger'>;
 }
+declare module 'fela/lib/enhancers/monolithic.js' {
+  declare module.exports: $Exports<'fela/lib/enhancers/monolithic'>;
+}
 declare module 'fela/lib/enhancers/perf.js' {
   declare module.exports: $Exports<'fela/lib/enhancers/perf'>;
+}
+declare module 'fela/lib/enhancers/statistics.js' {
+  declare module.exports: $Exports<'fela/lib/enhancers/statistics'>;
 }
 declare module 'fela/lib/index.js' {
   declare module.exports: $Exports<'fela/lib/index'>;
 }
 declare module 'fela/lib/native/createRenderer.js' {
   declare module.exports: $Exports<'fela/lib/native/createRenderer'>;
+}
+declare module 'fela/lib/plugins/__tests__/customProperty-test.js' {
+  declare module.exports: $Exports<'fela/lib/plugins/__tests__/customProperty-test'>;
+}
+declare module 'fela/lib/plugins/__tests__/dynamicPrefixer-test.js' {
+  declare module.exports: $Exports<'fela/lib/plugins/__tests__/dynamicPrefixer-test'>;
+}
+declare module 'fela/lib/plugins/__tests__/extend-test.js' {
+  declare module.exports: $Exports<'fela/lib/plugins/__tests__/extend-test'>;
+}
+declare module 'fela/lib/plugins/__tests__/fallbackValue-test.js' {
+  declare module.exports: $Exports<'fela/lib/plugins/__tests__/fallbackValue-test'>;
+}
+declare module 'fela/lib/plugins/__tests__/friendlyPseudoClass-test.js' {
+  declare module.exports: $Exports<'fela/lib/plugins/__tests__/friendlyPseudoClass-test'>;
+}
+declare module 'fela/lib/plugins/__tests__/LVHA-test.js' {
+  declare module.exports: $Exports<'fela/lib/plugins/__tests__/LVHA-test'>;
+}
+declare module 'fela/lib/plugins/__tests__/namedMediaQuery-test.js' {
+  declare module.exports: $Exports<'fela/lib/plugins/__tests__/namedMediaQuery-test'>;
+}
+declare module 'fela/lib/plugins/__tests__/placeholderPrefixer-test.js' {
+  declare module.exports: $Exports<'fela/lib/plugins/__tests__/placeholderPrefixer-test'>;
+}
+declare module 'fela/lib/plugins/__tests__/prefixer-test.js' {
+  declare module.exports: $Exports<'fela/lib/plugins/__tests__/prefixer-test'>;
+}
+declare module 'fela/lib/plugins/__tests__/removeUndefined-test.js' {
+  declare module.exports: $Exports<'fela/lib/plugins/__tests__/removeUndefined-test'>;
+}
+declare module 'fela/lib/plugins/__tests__/unit-test.js' {
+  declare module.exports: $Exports<'fela/lib/plugins/__tests__/unit-test'>;
 }
 declare module 'fela/lib/plugins/customProperty.js' {
   declare module.exports: $Exports<'fela/lib/plugins/customProperty'>;
@@ -462,6 +783,12 @@ declare module 'fela/lib/presets/dev.js' {
 declare module 'fela/lib/presets/web.js' {
   declare module.exports: $Exports<'fela/lib/presets/web'>;
 }
+declare module 'fela/lib/tools/__tests__/mapValueToMediaQuery-test.js' {
+  declare module.exports: $Exports<'fela/lib/tools/__tests__/mapValueToMediaQuery-test'>;
+}
+declare module 'fela/lib/tools/__tests__/StyleSheet-test.js' {
+  declare module.exports: $Exports<'fela/lib/tools/__tests__/StyleSheet-test'>;
+}
 declare module 'fela/lib/tools/index.js' {
   declare module.exports: $Exports<'fela/lib/tools/index'>;
 }
@@ -471,14 +798,77 @@ declare module 'fela/lib/tools/mapValueToMediaQuery.js' {
 declare module 'fela/lib/tools/StyleSheet.js' {
   declare module.exports: $Exports<'fela/lib/tools/StyleSheet'>;
 }
+declare module 'fela/lib/utils/__tests__/applyMediaRulesInOrder-test.js' {
+  declare module.exports: $Exports<'fela/lib/utils/__tests__/applyMediaRulesInOrder-test'>;
+}
+declare module 'fela/lib/utils/__tests__/checkFontFormat-test.js' {
+  declare module.exports: $Exports<'fela/lib/utils/__tests__/checkFontFormat-test'>;
+}
+declare module 'fela/lib/utils/__tests__/cssifyFontFace-test.js' {
+  declare module.exports: $Exports<'fela/lib/utils/__tests__/cssifyFontFace-test'>;
+}
+declare module 'fela/lib/utils/__tests__/cssifyKeyframe-test.js' {
+  declare module.exports: $Exports<'fela/lib/utils/__tests__/cssifyKeyframe-test'>;
+}
+declare module 'fela/lib/utils/__tests__/cssifyMediaQueryRules-test.js' {
+  declare module.exports: $Exports<'fela/lib/utils/__tests__/cssifyMediaQueryRules-test'>;
+}
+declare module 'fela/lib/utils/__tests__/cssifyStaticStyle-test.js' {
+  declare module.exports: $Exports<'fela/lib/utils/__tests__/cssifyStaticStyle-test'>;
+}
+declare module 'fela/lib/utils/__tests__/generateAnimationName-test.js' {
+  declare module.exports: $Exports<'fela/lib/utils/__tests__/generateAnimationName-test'>;
+}
+declare module 'fela/lib/utils/__tests__/generateClassName-test.js' {
+  declare module.exports: $Exports<'fela/lib/utils/__tests__/generateClassName-test'>;
+}
+declare module 'fela/lib/utils/__tests__/generateCombinedMediaQuery-test.js' {
+  declare module.exports: $Exports<'fela/lib/utils/__tests__/generateCombinedMediaQuery-test'>;
+}
+declare module 'fela/lib/utils/__tests__/generateCSSRule-test.js' {
+  declare module.exports: $Exports<'fela/lib/utils/__tests__/generateCSSRule-test'>;
+}
+declare module 'fela/lib/utils/__tests__/generateCSSSelector-test.js' {
+  declare module.exports: $Exports<'fela/lib/utils/__tests__/generateCSSSelector-test'>;
+}
+declare module 'fela/lib/utils/__tests__/generateStaticReference-test.js' {
+  declare module.exports: $Exports<'fela/lib/utils/__tests__/generateStaticReference-test'>;
+}
+declare module 'fela/lib/utils/__tests__/isMediaQuery-test.js' {
+  declare module.exports: $Exports<'fela/lib/utils/__tests__/isMediaQuery-test'>;
+}
+declare module 'fela/lib/utils/__tests__/isNestedSelector-test.js' {
+  declare module.exports: $Exports<'fela/lib/utils/__tests__/isNestedSelector-test'>;
+}
+declare module 'fela/lib/utils/__tests__/minifyCSSString-test.js' {
+  declare module.exports: $Exports<'fela/lib/utils/__tests__/minifyCSSString-test'>;
+}
+declare module 'fela/lib/utils/__tests__/processStyleWithPlugins-test.js' {
+  declare module.exports: $Exports<'fela/lib/utils/__tests__/processStyleWithPlugins-test'>;
+}
+declare module 'fela/lib/utils/__tests__/toCSSString-test.js' {
+  declare module.exports: $Exports<'fela/lib/utils/__tests__/toCSSString-test'>;
+}
 declare module 'fela/lib/utils/applyMediaRulesInOrder.js' {
   declare module.exports: $Exports<'fela/lib/utils/applyMediaRulesInOrder'>;
+}
+declare module 'fela/lib/utils/arrayEach.js' {
+  declare module.exports: $Exports<'fela/lib/utils/arrayEach'>;
+}
+declare module 'fela/lib/utils/arrayReduce.js' {
+  declare module.exports: $Exports<'fela/lib/utils/arrayReduce'>;
 }
 declare module 'fela/lib/utils/assign.js' {
   declare module.exports: $Exports<'fela/lib/utils/assign'>;
 }
+declare module 'fela/lib/utils/assignStyles.js' {
+  declare module.exports: $Exports<'fela/lib/utils/assignStyles'>;
+}
 declare module 'fela/lib/utils/checkFontFormat.js' {
   declare module.exports: $Exports<'fela/lib/utils/checkFontFormat'>;
+}
+declare module 'fela/lib/utils/checkFontUrl.js' {
+  declare module.exports: $Exports<'fela/lib/utils/checkFontUrl'>;
 }
 declare module 'fela/lib/utils/cssifyFontFace.js' {
   declare module.exports: $Exports<'fela/lib/utils/cssifyFontFace'>;
@@ -522,6 +912,9 @@ declare module 'fela/lib/utils/generateStaticReference.js' {
 declare module 'fela/lib/utils/isAttributeSelector.js' {
   declare module.exports: $Exports<'fela/lib/utils/isAttributeSelector'>;
 }
+declare module 'fela/lib/utils/isBase64.js' {
+  declare module.exports: $Exports<'fela/lib/utils/isBase64'>;
+}
 declare module 'fela/lib/utils/isChildSelector.js' {
   declare module.exports: $Exports<'fela/lib/utils/isChildSelector'>;
 }
@@ -530,6 +923,9 @@ declare module 'fela/lib/utils/isMediaQuery.js' {
 }
 declare module 'fela/lib/utils/isNestedSelector.js' {
   declare module.exports: $Exports<'fela/lib/utils/isNestedSelector'>;
+}
+declare module 'fela/lib/utils/isObject.js' {
+  declare module.exports: $Exports<'fela/lib/utils/isObject'>;
 }
 declare module 'fela/lib/utils/isPseudoSelector.js' {
   declare module.exports: $Exports<'fela/lib/utils/isPseudoSelector'>;
@@ -545,6 +941,9 @@ declare module 'fela/lib/utils/minifyCSSString.js' {
 }
 declare module 'fela/lib/utils/normalizeNestedProperty.js' {
   declare module.exports: $Exports<'fela/lib/utils/normalizeNestedProperty'>;
+}
+declare module 'fela/lib/utils/objectReduce.js' {
+  declare module.exports: $Exports<'fela/lib/utils/objectReduce'>;
 }
 declare module 'fela/lib/utils/processStyleWithPlugins.js' {
   declare module.exports: $Exports<'fela/lib/utils/processStyleWithPlugins'>;

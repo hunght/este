@@ -10,7 +10,8 @@
     "jest:watch": "jest --watch",
     "postinstall": "gulp native && gulp build --production",
     "start": "gulp",
-    "test": "gulp test"
+    "test": "gulp test",
+    "upgrade": "rimraf node_modules yarn.lock flow-typed && yarn && flow-typed install"
   },
   "engines": {
     "node": ">=6"
@@ -27,6 +28,7 @@
     "css-loader": "^0.26.0",
     "del": "^2.1.0",
     "express": "^4.14.0",
+    "rimraf": "^2.6.1",
     "extract-text-webpack-plugin": "2.0.0-beta.4",
     "fela": "^4.1.0",
     "fela-native": "^4.1.1",

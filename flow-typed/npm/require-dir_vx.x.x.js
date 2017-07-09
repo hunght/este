@@ -1,4 +1,4 @@
-// flow-typed signature: 882d5741f75890aaf8e10e02f1d8d635
+// flow-typed signature: 8142cb8e3d2b5b5db515c08a6c3b55eb
 // flow-typed version: <<STUB>>/require-dir_v^0.3.0/flow_v0.37.0
 
 /**
@@ -8,8 +8,8 @@
  *
  * Fill this stub out by replacing all the `any` types.
  *
- * Once filled out, we encourage you to share your work with the 
- * community by sending a pull request to: 
+ * Once filled out, we encourage you to share your work with the
+ * community by sending a pull request to:
  * https://github.com/flowtype/flow-typed
  */
 

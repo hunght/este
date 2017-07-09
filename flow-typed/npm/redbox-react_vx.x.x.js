@@ -1,4 +1,4 @@
-// flow-typed signature: 757d92912855fa6d3f55e0a01581c3b6
+// flow-typed signature: 8dbf9dbee125815d5eefcc6c5a1740e8
 // flow-typed version: <<STUB>>/redbox-react_v^1.0.5/flow_v0.37.0
 
 /**
@@ -8,8 +8,8 @@
  *
  * Fill this stub out by replacing all the `any` types.
  *
- * Once filled out, we encourage you to share your work with the 
- * community by sending a pull request to: 
+ * Once filled out, we encourage you to share your work with the
+ * community by sending a pull request to:
  * https://github.com/flowtype/flow-typed
  */
 

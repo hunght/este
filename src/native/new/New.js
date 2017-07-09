@@ -1,15 +1,13 @@
 // @flow
 import Header from './Header';
-import NewTodo from './NewTodo';
 import React from 'react';
-import Todos from './Todos';
+import NewList from './NewList';
 import { Box } from '../../common/components';
 
 const New = () =>
   <Box flex={1}>
     <Header />
-    <NewTodo />
-    <Todos />
+    <NewList />
   </Box>;
 
 export default New;

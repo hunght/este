@@ -1,4 +1,4 @@
-// flow-typed signature: bff749807bc056eaa5190f9081129b9c
+// flow-typed signature: 33634214a7ab1027efad778496caaa8b
 // flow-typed version: <<STUB>>/react-native-fbsdk_v^0.5.0/flow_v0.37.0
 
 /**
@@ -8,8 +8,8 @@
  *
  * Fill this stub out by replacing all the `any` types.
  *
- * Once filled out, we encourage you to share your work with the 
- * community by sending a pull request to: 
+ * Once filled out, we encourage you to share your work with the
+ * community by sending a pull request to:
  * https://github.com/flowtype/flow-typed
  */
 
