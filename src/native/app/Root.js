@@ -3,24 +3,16 @@ import App from './App';
 import Fela from '../../common/components/FelaProvider';
 import React from 'react';
 import configureFela from '../configureFela';
-import { MemoryRouter } from 'react-router';
 import { Provider as Redux } from 'react-redux';
-import {
-  Image,
-  Text,
-  TextInput,
-  TouchableOpacity,
-  View,
-} from 'react-native';
+import { Image, Text, TextInput, TouchableOpacity, View } from 'react-native';
 
 type Props = {
-  store: Object,
+  store: Object
 };
 
 // Must be the ES6 class to ensure hot reload works for stateless components.
 /* eslint-disable react/prefer-stateless-function */
 class Root extends React.Component {
-
   props: Props;
 
   render() {
@@ -35,14 +27,11 @@ class Root extends React.Component {
           View={View}
           renderer={configureFela()}
         >
-          <MemoryRouter>
-            <App />
-          </MemoryRouter>
+          <App />
         </Fela>
       </Redux>
     );
   }
-
 }
 
 export default Root;

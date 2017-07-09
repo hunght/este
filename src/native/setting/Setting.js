@@ -8,11 +8,11 @@ import { Image } from 'react-native';
 import { Redirect } from 'react-router';
 import { connect } from 'react-redux';
 
-type MePageProps = {
+type SettingProps = {
   viewer: User
 };
 
-const MePage = ({ viewer }: MePageProps) =>
+const Setting = ({ viewer }: SettingProps) =>
   !viewer
     ? <Redirect to="/" />
     : <Box alignItems="center">
@@ -31,4 +31,4 @@ const MePage = ({ viewer }: MePageProps) =>
 
 export default connect((state: State) => ({
   viewer: state.users.viewer
-}))(MePage);
+}))(Setting);

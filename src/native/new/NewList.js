@@ -4,27 +4,22 @@ import Checkbox from './Checkbox';
 import Footer from './Footer';
 import React from 'react';
 import todosMessages from '../../common/todos/todosMessages';
-import { Box, Text, TextInput } from '../../common/components';
+import { Box, TextInput } from '../../common/components';
 import { FormattedMessage } from 'react-intl';
-import { Image, ScrollView, StyleSheet } from 'react-native';
+import { Image, ScrollView, StyleSheet, ListView, Text } from 'react-native';
 import { compose, isEmpty, prop, reverse, sortBy, values } from 'ramda';
 import { connect } from 'react-redux';
 import { toggleTodoCompleted } from '../../common/todos/actions';
 
 type TodoItemProps = {
   todo: Todo,
-  toggleTodoCompleted: typeof toggleTodoCompleted
+  toggleTodoCompleted: typeof toggleTodoCompleted,
 };
-
 const TodoItem = ({ todo, toggleTodoCompleted }: TodoItemProps) =>
   <Box
-    borderBottomWidth={1}
-    flexDirection="row"
-    flexWrap="nowrap"
-    height={2}
-    style={theme => ({
-      borderBottomColor: theme.colors.open.gray3,
-      borderBottomWidth: StyleSheet.hairlineWidth
+    style={() => ({
+      height: 80,
+      width: 180,
     })}
   >
     <Checkbox
@@ -51,10 +46,23 @@ const IsEmpty = () =>
 
 type TodosProps = {
   todos: Array<Todo>,
-  toggleTodoCompleted: typeof toggleTodoCompleted
+  toggleTodoCompleted: typeof toggleTodoCompleted,
 };
 
-const Todos = ({ todos, toggleTodoCompleted }: TodosProps) => {
+const styles = StyleSheet.create({
+  list: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+  },
+  item: {
+    backgroundColor: 'red',
+    margin: 3,
+    width: 100,
+    height: 80,
+  },
+});
+
+const NewList = ({ todos, toggleTodoCompleted }: TodosProps) => {
   if (isEmpty(todos)) {
     return <IsEmpty />;
   }
@@ -62,22 +70,26 @@ const Todos = ({ todos, toggleTodoCompleted }: TodosProps) => {
   const sortedTodos = compose(
     reverse,
     sortBy(prop('createdAt')),
-    values // object values to array
+    values, // object values to array
   )(todos);
 
+  const ds = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
+
+  const dataSource = ds.cloneWithRows(sortedTodos);
+
   return (
-    <ScrollView>
-      {sortedTodos.map(todo =>
-        <TodoItem todo={todo} toggleTodoCompleted={toggleTodoCompleted} key={todo.id} />
-      )}
-      <Footer />
-    </ScrollView>
+    <ListView
+      contentContainerStyle={styles.list}
+      dataSource={dataSource}
+      renderRow={todo =>
+        <TodoItem todo={todo} toggleTodoCompleted={toggleTodoCompleted} key={todo.id} />}
+    />
   );
 };
 
 export default connect(
   (state: State) => ({
-    todos: state.todos.all
+    todos: state.todos.all,
   }),
-  { toggleTodoCompleted }
-)(Todos);
+  { toggleTodoCompleted },
+)(NewList);

@@ -2,13 +2,7 @@
 import * as themes from '../themes';
 import React from 'react';
 import { Platform, ScrollView } from 'react-native';
-import {
-  Box,
-  Button,
-  SwitchTheme,
-  Text,
-  ToggleBaseline,
-} from '../../common/components';
+import { Box, Button, SwitchTheme, Text, ToggleBaseline } from '../../common/components';
 
 // // An example how to style existing component.
 // const StyledSlider = (props) => (
@@ -19,7 +13,7 @@ import {
 //   height={2}
 // />
 
-const HomePage = () => (
+const HomePage = () =>
   <ScrollView>
     <Box paddingHorizontal={1} paddingTop={2}>
       <Text align="center" size={3}>
@@ -40,17 +34,12 @@ const HomePage = () => (
         Text Button
       </Button>
       <Box marginBottom={1}>
-        <Button primary>
-          Primary
-        </Button>
-        <Button success>
-          Success
-        </Button>
+        <Button primary>Primary</Button>
+        <Button success>Success</Button>
       </Box>
       <SwitchTheme themes={themes} />
       <ToggleBaseline />
     </Box>
-  </ScrollView>
-);
+  </ScrollView>;
 
 export default HomePage;

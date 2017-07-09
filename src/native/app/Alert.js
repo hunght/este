@@ -15,6 +15,7 @@ type AlertProps = {
   intl: $IntlShape,
 };
 
+
 type AlertState = {
   alertHeight: number,
   animation: Object,

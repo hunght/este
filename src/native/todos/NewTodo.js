@@ -11,7 +11,7 @@ import { injectIntl } from 'react-intl';
 type NewTodoProps = {
   addTodo: typeof addTodo,
   fields: React.PropTypes.object.isRequired,
-  intl: $IntlShape,
+  intl: $IntlShape
 };
 
 const onSubmitEditing = (fields, addTodo) => () => {
@@ -20,13 +20,7 @@ const onSubmitEditing = (fields, addTodo) => () => {
   fields.$reset();
 };
 
-const NewTodo = (
-  {
-    addTodo,
-    fields,
-    intl,
-  }: NewTodoProps,
-) => (
+const NewTodo = ({ addTodo, fields, intl }: NewTodoProps) =>
   <Box backgroundColor="primary" paddingVertical={0.5}>
     <TextInput
       {...fields.title}
@@ -37,14 +31,13 @@ const NewTodo = (
       placeholder={intl.formatMessage(newTodoMessages.placeholder)}
       size={1}
     />
-  </Box>
-);
+  </Box>;
 
 export default compose(
   connect(null, { addTodo }),
   fields({
     path: 'newTodo',
-    fields: ['title'],
+    fields: ['title']
   }),
-  injectIntl,
+  injectIntl
 )(NewTodo);

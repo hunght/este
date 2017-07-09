@@ -22,7 +22,7 @@ type FooterProps = {
   addHundredTodos: typeof addHundredTodos,
   clearAllCompletedTodos: typeof clearAllCompletedTodos,
   clearAllTodos: typeof clearAllTodos,
-  todos: Array<Todo>
+  todos: Array<Todo>,
 };
 
 const Footer = ({ addHundredTodos, clearAllCompletedTodos, clearAllTodos, todos }: FooterProps) =>
@@ -35,7 +35,7 @@ const Footer = ({ addHundredTodos, clearAllCompletedTodos, clearAllTodos, todos 
 
 export default connect(
   (state: State) => ({
-    todos: state.todos.all
+    todos: state.todos.all,
   }),
-  { addHundredTodos, clearAllCompletedTodos, clearAllTodos }
+  { addHundredTodos, clearAllCompletedTodos, clearAllTodos },
 )(Footer);
