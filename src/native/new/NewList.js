@@ -15,16 +15,11 @@ type TodoItemProps = {
   todo: Todo,
   toggleTodoCompleted: typeof toggleTodoCompleted,
 };
-
 const TodoItem = ({ todo, toggleTodoCompleted }: TodoItemProps) =>
   <Box
-    borderBottomWidth={1}
-    flexDirection="row"
-    flexWrap="nowrap"
-    height={2}
-    style={theme => ({
-      borderBottomColor: theme.colors.open.gray3,
-      borderBottomWidth: StyleSheet.hairlineWidth,
+    style={() => ({
+      height: 80,
+      width: 180,
     })}
   >
     <Checkbox
@@ -67,7 +62,7 @@ const styles = StyleSheet.create({
   },
 });
 
-const Todos = ({ todos, toggleTodoCompleted }: TodosProps) => {
+const NewList = ({ todos, toggleTodoCompleted }: TodosProps) => {
   if (isEmpty(todos)) {
     return <IsEmpty />;
   }
@@ -86,17 +81,9 @@ const Todos = ({ todos, toggleTodoCompleted }: TodosProps) => {
     <ListView
       contentContainerStyle={styles.list}
       dataSource={dataSource}
-      renderRow={rowData =>
-        <Text style={styles.item}>
-          {rowData.title}
-        </Text>}
+      renderRow={todo =>
+        <TodoItem todo={todo} toggleTodoCompleted={toggleTodoCompleted} key={todo.id} />}
     />
-    /* <ScrollView>
-      {sortedTodos.map(todo =>
-        <TodoItem todo={todo} toggleTodoCompleted={toggleTodoCompleted} key={todo.id} />,
-      )}
-      <Footer />
-    </ScrollView>  */
   );
 };
 
@@ -105,4 +92,4 @@ export default connect(
     todos: state.todos.all,
   }),
   { toggleTodoCompleted },
-)(Todos);
+)(NewList);
