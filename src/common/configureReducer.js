@@ -1,7 +1,6 @@
 // @flow weak
 import type { Action, State } from './types';
 import app from './app/reducer';
-import { tabBarReducer as tabBar } from '../native/app/router';
 import auth from './auth/reducer';
 import config from './config/reducer';
 import device from './device/reducer';
@@ -10,7 +9,7 @@ import todos from './todos/reducer';
 import users from './users/reducer';
 import { combineReducers } from 'redux';
 import { fieldsReducer as fields } from './lib/redux-fields';
-
+import isReactNative from './app/isReactNative';
 // stackoverflow.com/q/35622588/233902
 const resetStateOnSignOutReducer = (reducer, initialState) => (state: State, action: Action) => {
   const userWasSignedOut =
@@ -24,24 +23,40 @@ const resetStateOnSignOutReducer = (reducer, initialState) => (state: State, act
       app: state.app,
       config: initialState.config,
       device: initialState.device,
-      intl: initialState.intl
+      intl: initialState.intl,
     },
-    action
+    action,
   );
 };
 
 const configureReducer = (initialState: Object) => {
-  let reducer = combineReducers({
-    app,
-    auth,
-    config,
-    device,
-    fields,
-    intl,
-    todos,
-    users,
-    tabBar
-  });
+  let reducer;
+  if (isReactNative) {
+    const { tabBarReducer } = require('../native/app/router');
+    const tabBar = tabBarReducer;
+    reducer = combineReducers({
+      app,
+      auth,
+      config,
+      device,
+      fields,
+      intl,
+      todos,
+      users,
+      tabBar,
+    });
+  } else {
+    reducer = combineReducers({
+      app,
+      auth,
+      config,
+      device,
+      fields,
+      intl,
+      todos,
+      users,
+    });
+  }
 
   // The power of higher-order reducers, http://slides.com/omnidan/hor
   reducer = resetStateOnSignOutReducer(reducer, initialState);
