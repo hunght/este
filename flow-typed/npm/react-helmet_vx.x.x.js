@@ -1,4 +1,4 @@
-// flow-typed signature: 9152972244c406ec79ca3538c387c369
+// flow-typed signature: ad6a8bc044532313c9b052a7f6f7d129
 // flow-typed version: <<STUB>>/react-helmet_v^4.0.0/flow_v0.37.0
 
 /**
@@ -8,8 +8,8 @@
  *
  * Fill this stub out by replacing all the `any` types.
  *
- * Once filled out, we encourage you to share your work with the 
- * community by sending a pull request to: 
+ * Once filled out, we encourage you to share your work with the
+ * community by sending a pull request to:
  * https://github.com/flowtype/flow-typed
  */
 

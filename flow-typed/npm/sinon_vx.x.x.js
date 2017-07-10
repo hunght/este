@@ -1,4 +1,4 @@
-// flow-typed signature: 25570050218933a62f552ee1ca7e8708
+// flow-typed signature: a8a0a47e5f6bae8b6875bcc1e233910a
 // flow-typed version: <<STUB>>/sinon_v^1.17.2/flow_v0.37.0
 
 /**
@@ -8,8 +8,8 @@
  *
  * Fill this stub out by replacing all the `any` types.
  *
- * Once filled out, we encourage you to share your work with the 
- * community by sending a pull request to: 
+ * Once filled out, we encourage you to share your work with the
+ * community by sending a pull request to:
  * https://github.com/flowtype/flow-typed
  */
 

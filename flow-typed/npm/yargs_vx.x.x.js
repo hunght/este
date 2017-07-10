@@ -1,4 +1,4 @@
-// flow-typed signature: ec1bb868d0629f0ea463e3eb1968a730
+// flow-typed signature: e2843318bb65b97c333576a8642f70da
 // flow-typed version: <<STUB>>/yargs_v^6.0.0/flow_v0.37.0
 
 /**
@@ -8,8 +8,8 @@
  *
  * Fill this stub out by replacing all the `any` types.
  *
- * Once filled out, we encourage you to share your work with the 
- * community by sending a pull request to: 
+ * Once filled out, we encourage you to share your work with the
+ * community by sending a pull request to:
  * https://github.com/flowtype/flow-typed
  */
 

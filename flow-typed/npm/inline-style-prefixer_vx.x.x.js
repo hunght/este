@@ -1,4 +1,4 @@
-// flow-typed signature: fd424e18bb6763da241710408fd7c8a2
+// flow-typed signature: 639d12132f698f6aa693c841de9c6600
 // flow-typed version: <<STUB>>/inline-style-prefixer_v^2.0.5/flow_v0.37.0
 
 /**
@@ -8,8 +8,8 @@
  *
  * Fill this stub out by replacing all the `any` types.
  *
- * Once filled out, we encourage you to share your work with the 
- * community by sending a pull request to: 
+ * Once filled out, we encourage you to share your work with the
+ * community by sending a pull request to:
  * https://github.com/flowtype/flow-typed
  */
 

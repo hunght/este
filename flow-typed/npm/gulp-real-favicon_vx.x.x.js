@@ -1,4 +1,4 @@
-// flow-typed signature: 0c3ee1bed356f1dc7a8d04bb722feaae
+// flow-typed signature: 904cbd6a56012a03ba380942d7d10c2e
 // flow-typed version: <<STUB>>/gulp-real-favicon_v^0.2.1/flow_v0.37.0
 
 /**
@@ -8,8 +8,8 @@
  *
  * Fill this stub out by replacing all the `any` types.
  *
- * Once filled out, we encourage you to share your work with the 
- * community by sending a pull request to: 
+ * Once filled out, we encourage you to share your work with the
+ * community by sending a pull request to:
  * https://github.com/flowtype/flow-typed
  */
 

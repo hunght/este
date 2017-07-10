@@ -1,4 +1,4 @@
-// flow-typed signature: 8532579e8aa3d64e5b3983c826448e97
+// flow-typed signature: 6db094e5f9fe7586d89d38a354f62d0e
 // flow-typed version: <<STUB>>/nconf_v^0.8.1/flow_v0.37.0
 
 /**
@@ -8,8 +8,8 @@
  *
  * Fill this stub out by replacing all the `any` types.
  *
- * Once filled out, we encourage you to share your work with the 
- * community by sending a pull request to: 
+ * Once filled out, we encourage you to share your work with the
+ * community by sending a pull request to:
  * https://github.com/flowtype/flow-typed
  */
 

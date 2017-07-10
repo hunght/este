@@ -1,4 +1,4 @@
-// flow-typed signature: 5cc118bf54f582e12c263a7f5411b691
+// flow-typed signature: 826fae680bcd6d7e16b39941fd95befa
 // flow-typed version: <<STUB>>/make-error_v^1.0.4/flow_v0.37.0
 
 /**
@@ -8,8 +8,8 @@
  *
  * Fill this stub out by replacing all the `any` types.
  *
- * Once filled out, we encourage you to share your work with the 
- * community by sending a pull request to: 
+ * Once filled out, we encourage you to share your work with the
+ * community by sending a pull request to:
  * https://github.com/flowtype/flow-typed
  */
 

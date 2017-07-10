@@ -1,4 +1,4 @@
-// flow-typed signature: 9b7a17cd80084be7f8eb03d73570b4a5
+// flow-typed signature: 80c2c9db2b33b454e72f085dd0260a9a
 // flow-typed version: <<STUB>>/fela-native_v^4.1.1/flow_v0.37.0
 
 /**
@@ -8,8 +8,8 @@
  *
  * Fill this stub out by replacing all the `any` types.
  *
- * Once filled out, we encourage you to share your work with the 
- * community by sending a pull request to: 
+ * Once filled out, we encourage you to share your work with the
+ * community by sending a pull request to:
  * https://github.com/flowtype/flow-typed
  */
 

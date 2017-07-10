@@ -1,4 +1,4 @@
-// flow-typed signature: 2ac38a3f71516b7f69ed258dc00ec7d6
+// flow-typed signature: 125be93b50adfdc8473e8175e57c4080
 // flow-typed version: <<STUB>>/babel-preset-react-native_v^1.9.0/flow_v0.37.0
 
 /**
@@ -8,8 +8,8 @@
  *
  * Fill this stub out by replacing all the `any` types.
  *
- * Once filled out, we encourage you to share your work with the 
- * community by sending a pull request to: 
+ * Once filled out, we encourage you to share your work with the
+ * community by sending a pull request to:
  * https://github.com/flowtype/flow-typed
  */
 

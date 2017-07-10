@@ -1,4 +1,4 @@
-// flow-typed signature: d1590b553d4ce3e65b1dfdca3ae8647f
+// flow-typed signature: cff970c54aba61c842ccceaf14b7f110
 // flow-typed version: <<STUB>>/gravatar_v^1.6.0/flow_v0.37.0
 
 /**
@@ -8,8 +8,8 @@
  *
  * Fill this stub out by replacing all the `any` types.
  *
- * Once filled out, we encourage you to share your work with the 
- * community by sending a pull request to: 
+ * Once filled out, we encourage you to share your work with the
+ * community by sending a pull request to:
  * https://github.com/flowtype/flow-typed
  */
 

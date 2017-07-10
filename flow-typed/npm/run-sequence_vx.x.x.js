@@ -1,4 +1,4 @@
-// flow-typed signature: 565016d8c9415134ecaa43d45fbc5085
+// flow-typed signature: e74f4d367dd261fb7e347b01dd811f3d
 // flow-typed version: <<STUB>>/run-sequence_v^1.0.2/flow_v0.37.0
 
 /**
@@ -8,8 +8,8 @@
  *
  * Fill this stub out by replacing all the `any` types.
  *
- * Once filled out, we encourage you to share your work with the 
- * community by sending a pull request to: 
+ * Once filled out, we encourage you to share your work with the
+ * community by sending a pull request to:
  * https://github.com/flowtype/flow-typed
  */
 

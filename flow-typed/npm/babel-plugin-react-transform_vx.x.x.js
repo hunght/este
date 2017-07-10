@@ -1,4 +1,4 @@
-// flow-typed signature: 9b25397d8247ba409fa2c47d2378511a
+// flow-typed signature: 27d1464d17f57362f07bc241310ea1f2
 // flow-typed version: <<STUB>>/babel-plugin-react-transform_v^2.0.0/flow_v0.37.0
 
 /**
@@ -8,8 +8,8 @@
  *
  * Fill this stub out by replacing all the `any` types.
  *
- * Once filled out, we encourage you to share your work with the 
- * community by sending a pull request to: 
+ * Once filled out, we encourage you to share your work with the
+ * community by sending a pull request to:
  * https://github.com/flowtype/flow-typed
  */
 

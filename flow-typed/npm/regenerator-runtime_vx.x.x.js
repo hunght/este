@@ -1,4 +1,4 @@
-// flow-typed signature: e27ddd9b33e35705173a3ed4b4a51efa
+// flow-typed signature: c35c824cc4f5d0730192e55e9abadc61
 // flow-typed version: <<STUB>>/regenerator-runtime_v^0.10.0/flow_v0.37.0
 
 /**
@@ -8,8 +8,8 @@
  *
  * Fill this stub out by replacing all the `any` types.
  *
- * Once filled out, we encourage you to share your work with the 
- * community by sending a pull request to: 
+ * Once filled out, we encourage you to share your work with the
+ * community by sending a pull request to:
  * https://github.com/flowtype/flow-typed
  */
 

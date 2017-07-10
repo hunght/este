@@ -1,4 +1,4 @@
-// flow-typed signature: 94b170ae0fb1b988e2026abe4b22ef4c
+// flow-typed signature: 552ae92d355b94235a17fb89f66a90ea
 // flow-typed version: <<STUB>>/react-fela_v^4.0.1/flow_v0.37.0
 
 /**
@@ -8,8 +8,8 @@
  *
  * Fill this stub out by replacing all the `any` types.
  *
- * Once filled out, we encourage you to share your work with the 
- * community by sending a pull request to: 
+ * Once filled out, we encourage you to share your work with the
+ * community by sending a pull request to:
  * https://github.com/flowtype/flow-typed
  */
 
