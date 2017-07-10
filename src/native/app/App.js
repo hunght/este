@@ -19,7 +19,7 @@ type AppProps = {
   appShowMenu: typeof appShowMenu,
   appStarted: boolean,
   theme: Theme,
-  themeName: string
+  themeName: string,
 };
 
 const App = ({ appMenuShown, appShowMenu, appStarted, theme, themeName }: AppProps) => {
@@ -52,9 +52,9 @@ export default compose(
       appMenuShown: state.app.menuShown,
       appStarted: state.app.started,
       theme: themes[state.app.currentTheme] || themes.defaultTheme,
-      themeName: state.app.currentTheme
+      themeName: state.app.currentTheme,
     }),
-    { appShowMenu }
+    { appShowMenu },
   ),
-  start
+  start,
 )(App);
