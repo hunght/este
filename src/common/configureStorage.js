@@ -9,6 +9,7 @@ const paths = [
   ['fields'],
   ['intl', ['currentLocale']],
   ['users', ['online', 'viewer']],
+  ['todos']
 ];
 
 const transforms = [];
@@ -28,7 +29,7 @@ const configureStorage = (appName, storage) => ({
   keyPrefix: `${appName}:`,
   storage,
   transforms,
-  whitelist,
+  whitelist
 });
 
 export default configureStorage;

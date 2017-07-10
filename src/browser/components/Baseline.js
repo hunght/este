@@ -9,12 +9,12 @@ import { connect } from 'react-redux';
 type BaselineProps = {|
   baselineShown: boolean,
   children: any,
-  lineHeight: number,
+  lineHeight: number
 |};
 
 const styles = {
   container: {
-    position: 'relative',
+    position: 'relative'
   },
   baseline: lineHeight => ({
     backgroundImage: 'linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 1px, transparent 1px)',
@@ -26,23 +26,18 @@ const styles = {
     position: 'absolute',
     right: 0,
     top: 0,
-    zIndex: 9999,
-  }),
+    zIndex: 9999
+  })
 };
 
-const Baseline = ({ baselineShown, children, lineHeight }: BaselineProps) => (
+const Baseline = ({ baselineShown, children, lineHeight }: BaselineProps) =>
   <div style={styles.container}>
     {children}
-    {baselineShown &&
-      <div style={styles.baseline(lineHeight)} />
-    }
-  </div>
-);
+    {baselineShown && <div style={styles.baseline(lineHeight)} />}
+  </div>;
 
 export default compose(
-  connect(
-    (state: State) => ({
-      baselineShown: state.app.baselineShown,
-    }),
-  ),
+  connect((state: State) => ({
+    baselineShown: state.app.baselineShown
+  }))
 )(Baseline);

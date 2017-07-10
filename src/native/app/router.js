@@ -19,37 +19,37 @@ const routeConfiguration = {
     screen: HomePage,
     navigationOptions: {
       tabBarLabel: 'Home',
-      tabBarIcon: ({ tintColor }) => <Icon name="ios-home-outline" size={32} color={tintColor} />
-    }
+      tabBarIcon: ({ tintColor }) => <Icon name="ios-home-outline" size={32} color={tintColor} />,
+    },
   },
   New: {
     screen: New,
     navigationOptions: {
       tabBarLabel: "What's new",
-      tabBarIcon: ({ tintColor }) => <Octicons name="gift" size={32} color={tintColor} />
-    }
+      tabBarIcon: ({ tintColor }) => <Octicons name="gift" size={32} color={tintColor} />,
+    },
   },
   Designers: {
     screen: Designers,
     navigationOptions: {
       tabBarLabel: 'Designers',
-      tabBarIcon: ({ tintColor }) => <Icon name="ios-football" size={32} color={tintColor} />
-    }
+      tabBarIcon: ({ tintColor }) => <Icon name="ios-football" size={32} color={tintColor} />,
+    },
   },
   Shop: {
     screen: Shop,
     navigationOptions: {
       tabBarLabel: 'Shop',
-      tabBarIcon: ({ tintColor }) => <Icon name="ios-menu-outline" size={32} color={tintColor} />
-    }
+      tabBarIcon: ({ tintColor }) => <Icon name="ios-menu-outline" size={32} color={tintColor} />,
+    },
   },
   Setting: {
     screen: Setting,
     navigationOptions: {
       tabBarLabel: 'Setting',
-      tabBarIcon: ({ tintColor }) => <Icon name="ios-contact" size={32} color={tintColor} />
-    }
-  }
+      tabBarIcon: ({ tintColor }) => <Icon name="ios-contact" size={32} color={tintColor} />,
+    },
+  },
 };
 
 const tabBarConfiguration = {
@@ -57,11 +57,11 @@ const tabBarConfiguration = {
   tabBarOptions: {
     // tint color is passed to text and icons (if enabled) on the tab bar
     activeTintColor: 'black',
-    inactiveTintColor: 'gray'
+    inactiveTintColor: 'gray',
     // background color is for the tab component
     // activeBackgroundColor: 'blue',
     // inactiveBackgroundColor: 'white'
-  }
+  },
 };
 
 export const TabBar = TabNavigator(routeConfiguration, tabBarConfiguration);

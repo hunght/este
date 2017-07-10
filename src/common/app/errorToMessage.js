@@ -3,14 +3,11 @@ import authErrorMessages from '../auth/errorMessages';
 import { ValidationError } from '../lib/validation';
 import { firebaseMessages } from '../lib/redux-firebase';
 
-const isInnocuousError = error =>
-  error.code === 'auth/popup-closed-by-user'; // Firebase stuff.
+const isInnocuousError = error => error.code === 'auth/popup-closed-by-user'; // Firebase stuff.
 
 const validationErrorToMessage = error => ({
-  message:
-    authErrorMessages[error.name] ||
-    firebaseMessages[error.name],
-  values: error.params,
+  message: authErrorMessages[error.name] || firebaseMessages[error.name],
+  values: error.params
 });
 
 // Because app validations can be reused at many UI places, we have one common

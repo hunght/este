@@ -79,13 +79,13 @@ export type BoxProps = {
   opacity?: number,
   overflow?: 'visible' | 'hidden' | 'scroll',
   position?: 'absolute' | 'relative',
-  zIndex?: number,
+  zIndex?: number
 };
 
 type BoxContext = {
   View: () => React.Element<*>,
   renderer: any, // TODO: Type it.
-  theme: Theme,
+  theme: Theme
 };
 
 const setBorderTryEnsureRhythmViaPadding = (style, borderWidthProps) => {
@@ -94,9 +94,11 @@ const setBorderTryEnsureRhythmViaPadding = (style, borderWidthProps) => {
     if (typeof borderWidthPropValue !== 'number') return;
     style = { ...style, [borderWidthProp]: borderWidthPropValue };
     const paddingProp =
-      borderWidthProp === 'borderBottomWidth' ? 'paddingBottom' :
-      borderWidthProp === 'borderLeftWidth' ? 'paddingLeft' :
-      borderWidthProp === 'borderRightWidth' ? 'paddingRight' : 'paddingTop';
+      borderWidthProp === 'borderBottomWidth'
+        ? 'paddingBottom'
+        : borderWidthProp === 'borderLeftWidth'
+          ? 'paddingLeft'
+          : borderWidthProp === 'borderRightWidth' ? 'paddingRight' : 'paddingTop';
     const paddingPropValue = style[paddingProp];
     if (typeof paddingPropValue !== 'number') return;
     const compensatedPaddingPropValue = paddingPropValue - borderWidthPropValue;
@@ -107,78 +109,83 @@ const setBorderTryEnsureRhythmViaPadding = (style, borderWidthProps) => {
   return style;
 };
 
-const computeBoxStyle = (theme, {
-  // Maybe rhythm props.
-  margin,
-  marginVertical = margin,
-  marginHorizontal = margin,
-  marginTop = marginVertical,
-  marginBottom = marginVertical,
-  marginLeft = marginHorizontal,
-  marginRight = marginHorizontal,
-  padding,
-  paddingVertical = padding,
-  paddingHorizontal = padding,
-  paddingTop = paddingVertical,
-  paddingBottom = paddingVertical,
-  paddingLeft = paddingHorizontal,
-  paddingRight = paddingHorizontal,
-  height,
-  maxHeight,
-  maxWidth,
-  minHeight,
-  minWidth,
-  width,
-  bottom,
-  left,
-  right,
-  top,
+const computeBoxStyle = (
+  theme,
+  {
+    // Maybe rhythm props.
+    margin,
+    marginVertical = margin,
+    marginHorizontal = margin,
+    marginTop = marginVertical,
+    marginBottom = marginVertical,
+    marginLeft = marginHorizontal,
+    marginRight = marginHorizontal,
+    padding,
+    paddingVertical = padding,
+    paddingHorizontal = padding,
+    paddingTop = paddingVertical,
+    paddingBottom = paddingVertical,
+    paddingLeft = paddingHorizontal,
+    paddingRight = paddingHorizontal,
+    height,
+    maxHeight,
+    maxWidth,
+    minHeight,
+    minWidth,
+    width,
+    bottom,
+    left,
+    right,
+    top,
 
-  flex,
-  backgroundColor,
+    flex,
+    backgroundColor,
 
-  // Border props.
-  borderColor = 'gray',
-  // We can't use borderColor as default because some component in React Native,
-  // for example Image, doesn't support that.
-  borderBottomColor,
-  borderLeftColor,
-  borderRightColor,
-  borderTopColor,
-  borderRadius,
-  borderBottomLeftRadius = borderRadius,
-  borderBottomRightRadius = borderRadius,
-  borderTopLeftRadius = borderRadius,
-  borderTopRightRadius = borderRadius,
-  borderWidth = 0, // Enfore React Native behaviour. It also makes more sense.
-  borderBottomWidth = borderWidth,
-  borderLeftWidth = borderWidth,
-  borderRightWidth = borderWidth,
-  borderTopWidth = borderWidth,
-  borderStyle,
+    // Border props.
+    borderColor = 'gray',
+    // We can't use borderColor as default because some component in React Native,
+    // for example Image, doesn't support that.
+    borderBottomColor,
+    borderLeftColor,
+    borderRightColor,
+    borderTopColor,
+    borderRadius,
+    borderBottomLeftRadius = borderRadius,
+    borderBottomRightRadius = borderRadius,
+    borderTopLeftRadius = borderRadius,
+    borderTopRightRadius = borderRadius,
+    borderWidth = 0, // Enfore React Native behaviour. It also makes more sense.
+    borderBottomWidth = borderWidth,
+    borderLeftWidth = borderWidth,
+    borderRightWidth = borderWidth,
+    borderTopWidth = borderWidth,
+    borderStyle,
 
-  // Just value props.
-  alignItems,
-  alignSelf,
-  flexBasis,
-  flexDirection,
-  flexGrow,
-  flexShrink,
-  flexWrap,
-  justifyContent,
-  opacity,
-  overflow,
-  position,
-  zIndex,
+    // Just value props.
+    alignItems,
+    alignSelf,
+    flexBasis,
+    flexDirection,
+    flexGrow,
+    flexShrink,
+    flexWrap,
+    justifyContent,
+    opacity,
+    overflow,
+    position,
+    zIndex,
 
-  ...props
-}) => {
-  let style = isReactNative ? {} : {
-    // Enforce React Native behaviour for browsers.
-    position: 'relative',
-    flexDirection: 'column',
-    display: 'flex',
-  };
+    ...props
+  }
+) => {
+  let style = isReactNative
+    ? {}
+    : {
+        // Enforce React Native behaviour for browsers.
+        position: 'relative',
+        flexDirection: 'column',
+        display: 'flex'
+      };
 
   const maybeRhythmProps = {
     bottom,
@@ -198,7 +205,7 @@ const computeBoxStyle = (theme, {
     paddingTop,
     right,
     top,
-    width,
+    width
   };
 
   Object.keys(maybeRhythmProps).forEach(prop => {
@@ -213,7 +220,7 @@ const computeBoxStyle = (theme, {
   // Enforce React Native flex behaviour. Can be overridden.
   if (typeof flex === 'number') {
     if (isReactNative) {
-      style = { ...style, flex: 1 };
+      style = { ...style, flex };
     } else {
       style = { ...style, flexBasis: 'auto', flexGrow: flex, flexShrink: 1 };
     }
@@ -226,7 +233,7 @@ const computeBoxStyle = (theme, {
     borderBottomColor,
     borderLeftColor,
     borderRightColor,
-    borderTopColor,
+    borderTopColor
   };
 
   Object.keys(colorProps).forEach(prop => {
@@ -239,7 +246,7 @@ const computeBoxStyle = (theme, {
     borderBottomWidth,
     borderLeftWidth,
     borderRightWidth,
-    borderTopWidth,
+    borderTopWidth
   });
 
   // Just value props.
@@ -260,7 +267,7 @@ const computeBoxStyle = (theme, {
     opacity,
     overflow,
     position,
-    zIndex,
+    zIndex
   };
 
   Object.keys(justValueProps).forEach(prop => {
@@ -273,33 +280,28 @@ const computeBoxStyle = (theme, {
   return [style, props];
 };
 
-const Box = ({
-  as,
-  style,
-  ...props
-}: BoxProps, { // Note no $Exact<BoxProps>. It's up to the rendered component.
-  View,
-  renderer,
-  theme,
-}: BoxContext) => {
+const Box = (
+  { as, style, ...props }: BoxProps,
+  {
+    // Note no $Exact<BoxProps>. It's up to the rendered component.
+    View,
+    renderer,
+    theme
+  }: BoxContext
+) => {
   const Component = as || View;
   const [boxStyle, restProps] = computeBoxStyle(theme, props);
   const rule = renderer.renderRule(() => ({
     ...boxStyle,
-    ...(style && style(theme, boxStyle)),
+    ...(style && style(theme, boxStyle))
   }));
-  return (
-    <Component
-      {...restProps}
-      {...{ [isReactNative ? 'style' : 'className']: rule }}
-    />
-  );
+  return <Component {...restProps} {...{ [isReactNative ? 'style' : 'className']: rule }} />;
 };
 
 Box.contextTypes = {
   View: React.PropTypes.func,
   renderer: React.PropTypes.object,
-  theme: React.PropTypes.object,
+  theme: React.PropTypes.object
 };
 
 export default Box;
