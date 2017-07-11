@@ -6,7 +6,7 @@ import React from 'react';
 import todosMessages from '../../common/todos/todosMessages';
 import { Box, TextInput } from '../../common/components';
 import { FormattedMessage } from 'react-intl';
-import { Image, ScrollView, StyleSheet, ListView, Text } from 'react-native';
+import { Image, ScrollView, StyleSheet, ListView, Text, Dimensions } from 'react-native';
 import { compose, isEmpty, prop, reverse, sortBy, values } from 'ramda';
 import { connect } from 'react-redux';
 import { toggleTodoCompleted } from '../../common/todos/actions';
@@ -15,11 +15,15 @@ type TodoItemProps = {
   todo: Todo,
   toggleTodoCompleted: typeof toggleTodoCompleted,
 };
+const screenSize = Dimensions.get('window');
 const TodoItem = ({ todo, toggleTodoCompleted }: TodoItemProps) =>
   <Box
+    backgroundColor="primary"
+    marginTop={0.5}
+    // marginHorizontal={0.5}
+    height={5}
     style={() => ({
-      height: 80,
-      width: 180,
+      width: screenSize.width / 2,
     })}
   >
     <Checkbox
@@ -53,12 +57,6 @@ const styles = StyleSheet.create({
   list: {
     flexDirection: 'row',
     flexWrap: 'wrap',
-  },
-  item: {
-    backgroundColor: 'red',
-    margin: 3,
-    width: 100,
-    height: 80,
   },
 });
 
