@@ -10,6 +10,8 @@ import { Image, ScrollView, StyleSheet, ListView, Text, Dimensions } from 'react
 import { compose, isEmpty, prop, reverse, sortBy, values } from 'ramda';
 import { connect } from 'react-redux';
 import { toggleTodoCompleted } from '../../common/todos/actions';
+import gql from 'graphql-tag';
+import { graphql } from 'react-apollo';
 
 type TodoItemProps = {
   todo: Todo,
@@ -51,6 +53,7 @@ const IsEmpty = () =>
 type TodosProps = {
   todos: Array<Todo>,
   toggleTodoCompleted: typeof toggleTodoCompleted,
+  users: Array,
 };
 
 const styles = StyleSheet.create({
@@ -60,7 +63,8 @@ const styles = StyleSheet.create({
   },
 });
 
-const NewList = ({ todos, toggleTodoCompleted }: TodosProps) => {
+const NewList = ({ todos, toggleTodoCompleted, data }: TodosProps) => {
+  console.log(data.users);
   if (isEmpty(todos)) {
     return <IsEmpty />;
   }
@@ -85,9 +89,22 @@ const NewList = ({ todos, toggleTodoCompleted }: TodosProps) => {
   );
 };
 
+const ProductQuery = gql`
+  query {
+    users {
+      id
+      firstName
+      lastName
+      email
+    }
+  }
+`;
+
+const ContainerWithData = graphql(ProductQuery)(NewList);
+
 export default connect(
   (state: State) => ({
     todos: state.todos.all,
   }),
   { toggleTodoCompleted },
-)(NewList);
+)(ContainerWithData);

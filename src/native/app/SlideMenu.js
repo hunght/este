@@ -19,29 +19,29 @@ export const HomeStack = StackNavigator({
     screen: HomePage,
     navigationOptions: ({ navigation }) => ({
       headerLeft: <ButtonMenu navigation={navigation} />,
-      title: <Text style={style.headerHomeText}>Home</Text>
-    })
+      title: <Text style={style.headerHomeText}>Home</Text>,
+    }),
   },
   TodosPage: {
     screen: TodosPage,
     navigationOptions: ({ navigation }) => ({
       headerLeft: <ButtonMenu navigation={navigation} />,
-      title: <Text style={style.headerHomeText}>Todos</Text>
-    })
+      title: <Text style={style.headerHomeText}>Todos</Text>,
+    }),
   },
   OfflinePage: {
     screen: OfflinePage,
     navigationOptions: ({ navigation }) => ({
       headerLeft: <ButtonMenu navigation={navigation} />,
-      title: <Text style={style.headerHomeText}>Offline</Text>
-    })
+      title: <Text style={style.headerHomeText}>Offline</Text>,
+    }),
   },
   LanguageScreen: {
     screen: IntlPage,
     navigationOptions: ({ navigation }) => ({
       headerLeft: <ButtonMenu navigation={navigation} />,
-      title: <Text style={style.headerHomeText}>Languages</Text>
-    })
+      title: <Text style={style.headerHomeText}>Languages</Text>,
+    }),
   },
   ScreenProfile: {
     screen: MePage,
@@ -51,26 +51,26 @@ export const HomeStack = StackNavigator({
         <Text style={style.headerHomeText}>
           {navigation.state.params.user.name}
         </Text>
-      )
-    })
-  }
+      ),
+    }),
+  },
 });
 
 export const SlideMenu = DrawerNavigator(
   {
     screen: {
-      screen: HomeStack
-    }
+      screen: HomeStack,
+    },
   },
   {
     drawerWidth: 250,
     drawerPosition: 'left',
-    contentComponent: props => <Menu {...props} />
-  }
+    contentComponent: props => <Menu {...props} />,
+  },
 );
 
 const style = StyleSheet.create({
   headerHomeText: {
-    color: MAIN_COLOR
-  }
+    color: MAIN_COLOR,
+  },
 });

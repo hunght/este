@@ -3,11 +3,12 @@ import App from './App';
 import Fela from '../../common/components/FelaProvider';
 import React from 'react';
 import configureFela from '../configureFela';
-import { Provider as Redux } from 'react-redux';
 import { Image, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import { ApolloProvider } from 'react-apollo';
+import client from '../../common/apolloClient';
 
 type Props = {
-  store: Object
+  store: Object,
 };
 
 // Must be the ES6 class to ensure hot reload works for stateless components.
@@ -18,7 +19,7 @@ class Root extends React.Component {
   render() {
     const { store } = this.props;
     return (
-      <Redux store={store}>
+      <ApolloProvider client={client} store={store}>
         <Fela
           Button={TouchableOpacity}
           Image={Image}
@@ -29,7 +30,7 @@ class Root extends React.Component {
         >
           <App />
         </Fela>
-      </Redux>
+      </ApolloProvider>
     );
   }
 }

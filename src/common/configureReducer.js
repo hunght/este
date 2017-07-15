@@ -10,6 +10,8 @@ import users from './users/reducer';
 import { combineReducers } from 'redux';
 import { fieldsReducer as fields } from './lib/redux-fields';
 import isReactNative from './app/isReactNative';
+import client from './apolloClient';
+
 // stackoverflow.com/q/35622588/233902
 const resetStateOnSignOutReducer = (reducer, initialState) => (state: State, action: Action) => {
   const userWasSignedOut =
@@ -28,7 +30,7 @@ const resetStateOnSignOutReducer = (reducer, initialState) => (state: State, act
     action,
   );
 };
-
+const apollo = client.reducer();
 const configureReducer = (initialState: Object) => {
   let reducer;
   if (isReactNative) {
@@ -44,6 +46,7 @@ const configureReducer = (initialState: Object) => {
       todos,
       users,
       tabBar,
+      apollo,
     });
   } else {
     reducer = combineReducers({

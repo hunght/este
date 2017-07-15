@@ -8,24 +8,19 @@ import { connect } from 'react-redux';
 import { deleteTodo, toggleTodoCompleted } from '../../common/todos/actions';
 import { injectIntl } from 'react-intl';
 
-const TodosItem = ({
-  deleteTodo,
-  todo,
-  toggleTodoCompleted,
-}) => (
+const TodosItem = ({ deleteTodo, todo, toggleTodoCompleted }) =>
   <Box flexDirection="row" marginHorizontal={-0.25}>
     <Button
       decoration={todo.completed ? 'line-through' : 'none'}
       marginHorizontal={0.25}
       onClick={() => toggleTodoCompleted(todo)}
-    >{todo.title}</Button>
-    <Button
-      bold
-      marginHorizontal={0.25}
-      onClick={() => deleteTodo(todo.id)}
-    >×</Button>
-  </Box>
-);
+    >
+      {todo.title}
+    </Button>
+    <Button bold marginHorizontal={0.25} onClick={() => deleteTodo(todo.id)}>
+      ×
+    </Button>
+  </Box>;
 
 type TodosProps = {
   deleteTodo: typeof deleteTodo,
@@ -34,12 +29,7 @@ type TodosProps = {
   toggleTodoCompleted: typeof toggleTodoCompleted,
 };
 
-const Todos = ({
-  deleteTodo,
-  intl,
-  todos,
-  toggleTodoCompleted,
-}: TodosProps) => {
+const Todos = ({ deleteTodo, intl, todos, toggleTodoCompleted }: TodosProps) => {
   if (isEmpty(todos)) {
     return (
       <Text>
@@ -50,22 +40,17 @@ const Todos = ({
 
   // It's ok and recommended to sort things in view, but for the bigger data
   // leverage reactjs/reselect or bvaughn/react-virtualized.
-  const sortedTodos: Array<Todo> = compose(
-    reverse,
-    sortBy(prop('createdAt')),
-    values,
-  )(todos);
-
+  const sortedTodos: Array<Todo> = compose(reverse, sortBy(prop('createdAt')), values)(todos);
   return (
     <Box>
-      {sortedTodos.map(todo => (
+      {sortedTodos.map(todo =>
         <TodosItem
           key={todo.id}
           deleteTodo={deleteTodo}
           todo={todo}
           toggleTodoCompleted={toggleTodoCompleted}
-        />
-      ))}
+        />,
+      )}
     </Box>
   );
 };

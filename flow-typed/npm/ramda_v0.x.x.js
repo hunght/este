@@ -1,5 +1,5 @@
-// flow-typed signature: 5aadf9f28a59c4403c4f0d1cbb80c416
-// flow-typed version: c9ee287fa6/ramda_v0.x.x/flow_>=v0.34.x
+// flow-typed signature: 776be1e20e287a15b8a9b3f0b9f1c3e9
+// flow-typed version: ef808615f5/ramda_v0.x.x/flow_>=v0.34.x <=v0.38.x
 
 /* eslint-disable no-unused-vars, no-redeclare */
 

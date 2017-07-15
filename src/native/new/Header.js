@@ -13,12 +13,12 @@ const messages = defineMessages({
       one {You have {leftTodos} task}
       other {You have {leftTodos} tasks}
     }`,
-    id: 'todos.leftTodos'
-  }
+    id: 'todos.leftTodos',
+  },
 });
 
 type HeaderProps = {
-  todos: Array<Todo>
+  todos: Array<Todo>,
 };
 
 const computeLeftTodos = todos => values(todos).filter(todo => !todo.completed).length;
@@ -38,5 +38,5 @@ const Header = ({ todos }: HeaderProps) => {
 };
 
 export default connect((state: State) => ({
-  todos: state.todos.all
+  todos: state.todos.all,
 }))(Header);
