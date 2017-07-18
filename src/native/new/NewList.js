@@ -53,7 +53,7 @@ const IsEmpty = () =>
 type TodosProps = {
   todos: Array<Todo>,
   toggleTodoCompleted: typeof toggleTodoCompleted,
-  users: Array,
+  data: Object,
 };
 
 const styles = StyleSheet.create({
@@ -91,11 +91,9 @@ const NewList = ({ todos, toggleTodoCompleted, data }: TodosProps) => {
 
 const ProductQuery = gql`
   query {
-    users {
+    channels {
       id
-      firstName
-      lastName
-      email
+      name
     }
   }
 `;
